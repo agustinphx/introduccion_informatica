@@ -1,0 +1,49 @@
+Program matrices;
+Type
+TV=array[1..100] of integer;
+Matriz=array[1..10] of integer;
+{Procedure LeerMatriz(var Matriz:TM; N,M:byte);
+var i,j:integer;
+begin
+	i:=0;
+	writeln('ingrese fila,0 = fin de ingreso');readln(i);
+While i <> 0 do 
+     Begin 
+     Readln(j); 
+     Readln(Matriz[i,j]); 
+     write('Ingrese fila,0= fin de ingreso');readln(i);
+     End; 
+end;}
+
+Procedure LeerArchivo(var Matriz:TM; var N,M:byte);
+var i,j:integer; arch:text;
+begin
+	assign(arch,'ejeMatriz.txt');
+	reset(arch);
+	while not eof(arch) do
+	begin
+		readln(arch,N,M);
+		If(Matriz[N,M] < 0 ) then
+		writeln('es un elemento negativo')
+		Else
+		writeln('es un elemento positivo');	
+		If(Matriz[N,M] = 0 ) then
+		writeln('es un elemento nulo');
+	end;
+end;
+
+Procedure agrega(var Matriz:TM; V:TV; var N,M:byte);
+var i,j:byte;
+begin
+	
+
+
+end;
+
+
+
+BEGIN
+	LeerArchivo(arch,Matriz,N,M);
+	
+END.
+
