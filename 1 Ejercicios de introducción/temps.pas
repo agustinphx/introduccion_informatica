@@ -1,3 +1,4 @@
+//Convierte los grados de fahrenheit a Celcius.
 Program temp;
 
 Var
