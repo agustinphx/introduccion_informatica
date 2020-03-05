@@ -6,9 +6,10 @@ Begin
 ContP:=0;
 ContN:=0;
 SumP:=0; 
- SumN:=0;
+SumN:=0;
 Write ('Ingresar cantidad de numeros:');
 Readln(N);
+
 For i:= 1 to N do
 Begin
 Writeln('Ingresar un numero:');
@@ -25,12 +26,12 @@ SumN:= SumN + Num;
 End
 End;
 If ContP <> 0 then
-Writeln('romedio positivos',SumP DIV ContP)
+	Writeln('romedio positivos',SumP DIV ContP)
 Else
-Writeln('noingresaron numeros positivos');
+	Writeln('noingresaron numeros positivos');
 If ContN <> 0 then
-Writeln('Promedio negativos', SumN DIV ContN)
+	Writeln('Promedio negativos', SumN DIV ContN)
 Else
-Writeln('no ingresaron numeros negativos');
+	Writeln('no ingresaron numeros negativos');
 readln();
 End.
