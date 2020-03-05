@@ -23,7 +23,7 @@ Begin
 	end;
 	Begin
 		If ( nota <= 3 ) then 
-		writeln(', es un desastre');
+		writeln(', recursa');
 	end;
 
 end.
