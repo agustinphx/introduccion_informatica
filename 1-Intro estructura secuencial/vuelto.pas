@@ -5,8 +5,8 @@ Var
 	billete,vuelto,gasto:integer;
 
 Begin
-writeln('Con que billete va abono: ?');readln(billete);
-writeln('Cual es su vuelto : ?');readln(vuelto);
+writeln('Con que billete abono?');readln(billete);
+writeln('Cual fue su vuelto?');readln(vuelto);
 gasto:= billete - vuelto;
-writeln('Gasto :',gasto);readln(gasto);
+writeln('Su gasto fue: ',gasto);readln(gasto);
 end.
