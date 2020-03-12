@@ -8,7 +8,6 @@ Program notas;
 Var
 	Nota:byte;
 	letra:char;
-	
 Begin
 write('ingrese la nota : '); readln(Nota);
 If ( Nota >= 90) and ( Nota <=100) then

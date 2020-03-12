@@ -4,7 +4,6 @@
 Program Alumno;
 Var
 	nota:byte;
-	
 Begin
 	writeln('ingrese la nota del final'); readln(nota);
 	begin
