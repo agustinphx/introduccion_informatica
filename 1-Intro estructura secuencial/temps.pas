@@ -1,9 +1,7 @@
 //Convierte los grados de fahrenheit a Celcius.
 Program temp;
-
 Var
 	C:integer;
-
 Begin
 writeln('ingrese la temperatura en Farenheit :');readln(C);
 C:= C - 32;

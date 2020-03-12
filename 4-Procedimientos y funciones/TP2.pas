@@ -1,26 +1,26 @@
-//Agustin Rodriguez Philippeaux
+// TP2
 Program TP2;
-
 Type
 TV=array[1..100] of integer;
 
-
 Procedure insertarOrdenado(var A:TV; N,B:integer);
-var i:byte;
+var 
+	i:byte;
 begin  ///ORDENADO POR INSERCION
 i:=N;
 
 while (i>0) and (B < A[i]) do
 begin
-A[i+1] := A[i];
-i := i-1;
+	A[i+1] := A[i];
+	i := i-1;
 end;
-A[i+1] := B;
+	A[i+1] := B;
 end;
 
 
 Procedure LeerArchivo(var A:TV; var N:byte);
-var i,B:integer;  arch:text;
+var
+	i,B:integer;  arch:text;
 begin
 	i:=0;
 	assign(arch,'TP2.txt');
@@ -43,10 +43,9 @@ begin
 	close(arch);
 	end;
 	
-
-
 procedure MochilaPerfecta(A:TV; N:byte);
-var i:byte; sum:word; 
+var 
+	i:byte; sum:word; 
 begin
 	i:=1;
 	sum:=0;
@@ -66,11 +65,9 @@ end;
 Var
 	A:TV;
 	N:byte;
-
 BEGIN
 	LeerArchivo(A,N);
-	MochilaPerfecta(A,N);
-	
+	MochilaPerfecta(A,N);	
 END.
 
 

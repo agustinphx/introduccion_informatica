@@ -6,7 +6,8 @@
     TVP=array[1..100] of longint;
 
   Procedure LeeVector(Var TVAno:TVA; Var TVPrec:TVP; Var TVPt:TVPat; Var N:Byte);
-  Var Arch:text; basura:char;
+  Var 
+	Arch:text; basura:char;
   Begin
     Assign(Arch,'Autos.txt'); Reset(Arch);
     N:=0;
@@ -19,8 +20,10 @@
   End;
 
   Procedure PrecioMinimo(TVAno:TVA; TVPrec:TVP; N:Byte);
-  Var anio:word; minimo:longint; i:byte;
-  Begin minimo:=999999;
+  Var 
+	anio:word; minimo:longint; i:byte;
+  Begin 
+	minimo:=999999;
     writeln('Ingrese el anio del cual quiere saber el precio minimo'); readln(anio);
     for i:=1 to N do
       Begin
@@ -37,8 +40,10 @@
    end;
    
   Procedure BajoValor(TVAno:TVA; TVPrec:TVP; N:Byte);
-  Var i,cant:byte; precio:longint;
-  Begin cant:=0;
+  Var 
+	i,cant:byte; precio:longint;
+  Begin 
+	cant:=0;
     writeln('Ingrese el precio de referencia'); readln(precio);
     for i:=1 to N do
       Begin
@@ -53,8 +58,10 @@
   
  
   Procedure PromedioRango(TVAno:TVA; TVPrec:TVP; N:byte);
-  Var i,cant:byte; anioinf,aniosup:longint; preciolocal:longint; promedio:real;
-  Begin preciolocal:=0; cant:=0;
+  Var 
+	i,cant:byte; anioinf,aniosup:longint; preciolocal:longint; promedio:real;
+  Begin
+   preciolocal:=0; cant:=0;
     writeln('Ingrese el anio inferior'); readln(anioinf);
     writeln('Ingrese el anio superior'); readln(aniosup);
     for i:=1 to N do
@@ -66,7 +73,7 @@
               preciolocal:=preciolocal+TVPrec[i];
             End;
       end;
-    if preciolocal>0 then
+    if (preciolocal > 0) then
       Begin
         promedio:=preciolocal/cant;
         writeln('El precio promedio entre esos anios es de $',promedio:6:0)
@@ -76,11 +83,12 @@
   End;
   
   Procedure Patentes(TVAno:TVA; TVPt:TVPat; N:byte; VAR TVPatNuevo:TVPat);
-  Var i:byte;
+  Var 
+	i:byte;
   Begin
     for i:=1 to N do
     Begin
-      if TVAno[i] > 2018 then
+      if (TVAno[i] > 2018) then
         TVPatNuevo[i]:=TVPt[i]
     end;
     

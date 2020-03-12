@@ -16,13 +16,13 @@ Writeln('Ingresar un numero:');
 Readln(Num);
 If Num > 0 then
 Begin
-ContP:= ContP +1;
-SumP:= SumP + Num;
+	ContP:= ContP +1;
+	SumP:= SumP + Num;
 End
 Else
 Begin
-ContN:= ContN +1;
-SumN:= SumN + Num;
+	ContN:= ContN +1;
+	SumN:= SumN + Num;
 End
 End;
 If ContP <> 0 then

@@ -10,7 +10,6 @@ Var
 	V:TV;
 	N:byte;
 
-
 Procedure LeerArchivo( var V:TV; var N:byte);
 Var
 	arch:text;
@@ -26,8 +25,6 @@ end;
 close(arch);
 end;
 	
-
-
 Procedure ImprimirVector( var V:TV; N:byte);
 Var
 	i:byte;
@@ -38,8 +35,6 @@ begin
 	writeln(V[i]);
 end;
 end;
-
-
 	
 Begin
 	LeerArchivo(V,N);

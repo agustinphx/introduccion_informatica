@@ -5,7 +5,6 @@ Program canjes;
 Var
 	rubro:char;
 	puntos,compra:real;
-	
 Begin
 writeln('ingrese el valor de su compra :');readln(compra);
 writeln('Ingrese el rubro que desea canjear : 1- alimentos / 2- limpieza / 3- otros');readln(rubro);

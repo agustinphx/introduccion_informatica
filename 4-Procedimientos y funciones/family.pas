@@ -9,7 +9,8 @@ Var
 	N,M:byte;
 
 Procedure LeerArchivo(var Nombre:TV; var num:TVnum;  var N,M:byte);
-var i,j:byte; arch:text;
+var
+	i,j:byte; arch:text;
 Begin
 	assign(arch,'family.txt'); reset(arch);
 	readln(arch,N);

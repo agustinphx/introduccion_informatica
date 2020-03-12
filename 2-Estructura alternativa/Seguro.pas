@@ -8,7 +8,6 @@ Var
 	vehiculo,accidente,seguro:char;
 	edad:byte;
 	precio:real;
-	
 Begin
 writeln(' ingrese su tipo de vehiculo : C- Comercial / P- Particular :');readln(vehiculo);
 	if(vehiculo = 'C') then

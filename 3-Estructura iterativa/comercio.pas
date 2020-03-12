@@ -4,8 +4,8 @@ Var
 	Dto,DtoTotal,monto:real;
 	CantV,ventas:word;
 Begin
-	 CantV:=0;
-	 repeat
+CantV:=0;
+repeat
 	 	 writeln('ingrese el monto de la venta');readln(monto);
 			if(monto > 0) then
 				CantV:=CantV+1;
@@ -16,7 +16,6 @@ Begin
 			end;
 			If(monto < 1000) then
 			  ventas:=ventas+1;		
-			
 until(monto=0);
 writeln('la cantidad de ventas son :' ,CantV);
 writeln('la cantidad de ventas sin descuento son: ',ventas);

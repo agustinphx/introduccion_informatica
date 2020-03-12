@@ -1,5 +1,4 @@
 Program tipoparcial;
-
 Type
 	TV=array[1..100] of integer;
 	TM=array[1..100,1..100] of integer;
@@ -27,9 +26,6 @@ For i:= 1 to N do
 
 end;
 
-
-
-
 Function Promedio(matriz:TM; vector:TV; N,M:byte):real;
 var 
 	i:byte; 
@@ -50,7 +46,6 @@ Else
 	Promedio:= 0;
 end;
 	
-
 Function BusquedaPromedio(VProm: TR; N:byte; promedio: real):boolean;
 Var
 	i: byte;
@@ -61,8 +56,6 @@ Begin
 	BusquedaPromedio:= (i<=N);	
 end;
 	
-																								
-
 Procedure generarArreglos(matriz:TM; vector:TV; N,M:byte; var k:byte; var VProm:TR; var VFila:TV);
 VAR
 	i:byte;
@@ -83,7 +76,8 @@ For i:= 1 to N do
 end;	
 
 Procedure imprime(VProm:TR; VFila:TV; K:byte);
-var i:byte;
+var 
+	i:byte;
 begin
 	For i:= 1 to K do
 		write(' ',VProm[i]:8:2);
@@ -93,7 +87,6 @@ begin
 		write(' ',VFila[i]);
 end;
 	
-
 Begin
 	LeerArchivo(matriz, vector, N,M);
 	Promedio(matriz,vector,N,M);
