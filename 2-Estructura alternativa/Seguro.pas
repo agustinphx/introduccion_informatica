@@ -4,7 +4,6 @@
 //• Accidentes en el período anterior : S ; N ( – 5%)
 //• Edad del conductor (más de 65 años + 10%)
 Program calculaPrecio;
-
 Var
 	vehiculo,accidente,seguro:char;
 	edad:byte;
@@ -16,7 +15,7 @@ writeln(' ingrese su tipo de vehiculo : C- Comercial / P- Particular :');readln(
 		precio:= 200
 Else if(vehiculo = 'P') then
 		precio:=100;
-
+		
 writeln('ingrese el tipo de seguro : 1- Todo riesgo / 2- Basico :'	);readln(seguro);
 	If(seguro = '1') then
 	precio:= precio *1.3
@@ -28,14 +27,14 @@ writeln('Tuvo accidentes en el periodo anterior? S / N');readln(accidente);
 	precio:= precio
 Else if(accidente = 'N') then
 	precio:= precio * 0.95;
-
+	
 writeln('Cual es la edad del conductor?');readln(edad);
 	If(edad > 65 ) then
 	precio:= precio*1.10
 Else if (edad < 65) then
 	precio:=precio;
-	
-	writeln(' debe abonar :',precio:4:2);readln(precio);
+
+writeln(' debe abonar :',precio:4:2);readln(precio);
 end.
 		
 	
