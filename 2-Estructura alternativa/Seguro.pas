@@ -1,3 +1,8 @@
+//Se quiere calcular el precio que debe abonar para asegurar un automotor. Los parámetros que determinan el costo son:
+//• Tipo de vehículo : C- Comercial ($200) ; P- Particular ($ 100)
+//• Tipo de seguro : 1- Todo riesgo (+30%) ; 2- Básico (sin incremento)
+//• Accidentes en el período anterior : S ; N ( – 5%)
+//• Edad del conductor (más de 65 años + 10%)
 Program calculaPrecio;
 
 Var

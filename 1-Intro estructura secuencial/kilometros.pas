@@ -1,3 +1,5 @@
+//11.-Escribir un programa para calcular la velocidad y el consumo por kilómetro de un automóvil.
+//Ingresar por teclado la distancia (en kilómetros), el tiempo (en horas) y la cantidad de gasoil empleado.
 Program kilometros;
 
 Var
