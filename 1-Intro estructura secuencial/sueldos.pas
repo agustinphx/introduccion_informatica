@@ -1,7 +1,6 @@
 // Calcular e imprimir el sueldo bruto y neto de un empleado. Considerar la paga de $8 la hora,
 //un descuento del 11% previsional y el 5% para cobertura médica. La cantidad de horas trabajadas es un dato de entrada.
 Program sueldo;
-
 Var
 	horas:byte;
 	sueldoBruto,sueldoNeto:real;

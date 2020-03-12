@@ -1,8 +1,6 @@
 // Crear un algoritmo, basado en la nota
 //Imprima si el alumno aprueba
 // Aprueba con 6
-
-
 Program Alumno;
 Var
 	nota:byte;

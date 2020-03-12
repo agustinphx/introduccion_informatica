@@ -1,7 +1,6 @@
 //A partir del peso inicial y final que registro una persona en un tratamiento para adelgazar,
 //calcular e informar el porcentaje que perdió con respecto al peso inicial
 Program peso;
-
 Var
 	pesoI,pesoF:byte;
 	porcentaje:real;

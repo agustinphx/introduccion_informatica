@@ -2,7 +2,6 @@
 //Otorga 1 punto cada $3 en alimentos,$2 en limpieza y $5 en otros.
 //Ingresar los tres importes e informar los puntos obtenidos. (si en algún rubro no realizó compras, dicho importe es cero)
 Program canjes;
-
 Var
 	rubro:char;
 	puntos,compra:real;
