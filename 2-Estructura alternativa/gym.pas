@@ -19,11 +19,13 @@ descuento:= arancel * 0.90;
 If (actividad = 4) then
 begin
 	arancel:= descuento * actividad;
-	write('El cliente : ',cliente, ', debe abonar : ',arancel:2:0);
+	writeln('El cliente : ',cliente);
+	writeln('Debe abonar : $',arancel:2:0);
 end
 Else if(actividad = 5) then
 begin
 	arancel:= descuento * actividad;
-	write('El cliente : ',cliente, ', debe abonar : ',arancel:2:0);
+	writeln('El cliente : ',cliente);
+	writeln('Debe abonar : $',arancel:2:0);
 end;
 end.
