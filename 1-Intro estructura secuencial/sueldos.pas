@@ -5,8 +5,8 @@ Var
 	horas:byte;
 	sueldoBruto,sueldoNeto:real;
 Begin	
-writeln('ingrese la cantidad de horas trabajadas :');readln(horas);
-sueldoBruto:= horas * 8;
-sueldoNeto:= sueldoBruto * 0.84; // 16% de descuento entre aportes y cobertura medica.
-writeln('Su sueldo bruto es :',sueldoBruto:4:2, ' / su sueldo neto es :',sueldoNeto:4:2);
+	writeln('ingrese la cantidad de horas trabajadas :');readln(horas);
+	sueldoBruto:= horas * 8;
+	sueldoNeto:= sueldoBruto * 0.84; // 16% de descuento entre aportes y cobertura medica.
+	writeln('Su sueldo bruto es :',sueldoBruto:4:2, ' / su sueldo neto es :',sueldoNeto:4:2);
 end.

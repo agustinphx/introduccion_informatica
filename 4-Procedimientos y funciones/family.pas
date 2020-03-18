@@ -29,5 +29,4 @@ end;
 
 Begin
 	LeerArchivo(Nombre,num,N,M);
-
 end.

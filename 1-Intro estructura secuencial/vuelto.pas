@@ -4,8 +4,8 @@ Program vuelto3;
 Var
 	billete,vuelto,gasto:integer;
 Begin
-writeln('Con que billete abono?');readln(billete);
-writeln('Cual fue su vuelto?');readln(vuelto);
-gasto:= billete - vuelto;
-writeln('Su gasto fue: ',gasto);readln(gasto);
+	writeln('Con que billete abono?');readln(billete);
+	writeln('Cual fue su vuelto?');readln(vuelto);
+	gasto:= billete - vuelto;
+	writeln('Su gasto fue: ',gasto);readln(gasto);
 end.

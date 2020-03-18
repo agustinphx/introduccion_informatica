@@ -1,4 +1,5 @@
 //Una empresa mayorista aplica descuentos progresivos de acuerdo a cantidad de unidades compradas.
+//El precio es de $1 c/u.
 //- Más de 100 y hasta 500 unidades  5%.
 //- Más de 500 y hasta 2000 unidades  7%.
 //- Más de 2000 y hasta 10.000 unidades  10%.
@@ -10,7 +11,7 @@ Var
 	precio:real;
 Begin
 	write('Ingrese la cantidad de unidades que desea comprar : ');readln(unidades);
-	precio:= 2;
+	
 	If (unidades > 100) and (unidades <= 500) then
 		precio:= unidades * 0.95
 

@@ -29,4 +29,4 @@ Begin
 		deuda:= deuda * 1.3;
 		
 	writeln('Su deuda es : ',deuda:2:0);
-	end.
+end.

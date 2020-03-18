@@ -8,18 +8,18 @@ Var
 	peso:byte;
 	altura,masaCorporal:real;
 Begin
-write('ingrese el peso : ');readln(peso);
-write('ingrese la altura : ');readln(altura);
-altura:= altura * altura;
-masaCorporal:= peso / altura;
+	write('ingrese el peso : ');readln(peso);
+	write('ingrese la altura : ');readln(altura);
+	altura:= altura * altura;
+	masaCorporal:= peso / altura;
 
-If (masaCorporal < 18) then
-	writeln('Es una persona delgada');
+	If (masaCorporal < 18) then
+		writeln('Es una persona delgada');
 
-if(masaCorporal >= 18) and (masaCorporal <= 25) then
-	writeln('Es una persona normal');
+	if(masaCorporal >= 18) and (masaCorporal <= 25) then
+		writeln('Es una persona normal');
 
-if(masaCorporal > 25) then
-	writeln('Es una persona obesa');
+	if(masaCorporal > 25) then
+		writeln('Es una persona obesa');
 end.
 

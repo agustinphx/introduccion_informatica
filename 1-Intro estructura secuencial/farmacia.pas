@@ -10,9 +10,9 @@ Program farmacia;
 Var
 	precioProducto,precioFinal,descuento:real;
 Begin
-write('ingrese el precio del producto : ');readln(precioProducto);
-descuento:= precioProducto * 0.10;
-precioFinal:= precioProducto - descuento;
-writeln('El descuento es de: $',descuento:2:0, ' y el valor final es de: $',precioFinal:2:0);
+	write('ingrese el precio del producto : ');readln(precioProducto);
+	descuento:= precioProducto * 0.10;
+	precioFinal:= precioProducto - descuento;
+	writeln('El descuento es de: $',descuento:2:0, ' y el valor final es de: $',precioFinal:2:0);
 end.
 					

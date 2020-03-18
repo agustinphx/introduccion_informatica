@@ -27,7 +27,7 @@
     writeln('Ingrese el anio del cual quiere saber el precio minimo'); readln(anio);
     for i:=1 to N do
       Begin
-        if anio = TVAno[i] then
+		if anio = TVAno[i] then
           Begin
             if TVPrec[i] < minimo then
                 minimo:=TVPrec[i]

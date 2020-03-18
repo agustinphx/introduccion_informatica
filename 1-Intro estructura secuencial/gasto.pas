@@ -4,9 +4,9 @@ Program gasto4;
 Var
 	billete,gasto,vuelto:integer;	
 Begin
-Writeln('Con que billete va abonar?');readln(billete);
-writeln('Ingrese el monto de su gasto?');readln(gasto);
-vuelto:= billete -  gasto;
-writeln('Su vuelto es :',vuelto);readln(vuelto);
+	Writeln('Con que billete va abonar?');readln(billete);
+	writeln('Ingrese el monto de su gasto?');readln(gasto);
+	vuelto:= billete -  gasto;
+	writeln('Su vuelto es :',vuelto);readln(vuelto);
 
 end.

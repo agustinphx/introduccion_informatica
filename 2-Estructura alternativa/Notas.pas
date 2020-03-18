@@ -9,32 +9,32 @@ Var
 	Nota:byte;
 	letra:char;
 Begin
-write('ingrese la nota : '); readln(Nota);
-If ( Nota >= 90) and ( Nota <=100) then
-begin
-	letra:= 'A';
-	write('la calificacion es :',letra);
-end	
-Else if ( Nota >= 80) and ( Nota <=89) then
-begin
-	letra:= 'B';
-	write('la calificacion es :',letra);
-		end	
-Else If ( Nota >=70) and ( Nota <=79) then
-begin
-	Letra:= 'C';
-	write('El alumno obtuvo la calificacion : ',letra);	
-end
-Else If ( Nota >= 60) and ( Nota <=69) then
-begin
-	Letra:= 'D';
-	write('El alumno obtuvo la calificacion : ',letra);
-end	
-Else If ( Nota < 60 ) then
-begin	
-	Letra:= 'F';
-	write('El alumno obtuvo la calificacion : ',letra);
-end;
+	write('ingrese la nota : '); readln(Nota);
+	If ( Nota >= 90) and ( Nota <=100) then
+	begin
+		letra:= 'A';
+		write('la calificacion es :',letra);
+	end	
+	Else if ( Nota >= 80) and ( Nota <=89) then
+	begin
+		letra:= 'B';
+		write('la calificacion es :',letra);
+	end	
+	Else If ( Nota >=70) and ( Nota <=79) then
+	begin
+		Letra:= 'C';
+		write('El alumno obtuvo la calificacion : ',letra);	
+	end
+	Else If ( Nota >= 60) and ( Nota <=69) then
+	begin
+		Letra:= 'D';
+		write('El alumno obtuvo la calificacion : ',letra);
+	end	
+	Else If ( Nota < 60 ) then
+	begin	
+		Letra:= 'F';
+		write('El alumno obtuvo la calificacion : ',letra);
+	end;
 end.
 
 
