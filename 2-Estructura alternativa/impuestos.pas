@@ -14,7 +14,8 @@ write('Ingrese el anio de su deuda : ');readln(anio);
 write('Ingrese el monto de su deuda : ');readln(deuda);
 
 If (anio < 1980) then
-	write('Su deuda prescribio')
+	deuda:= 0
+
 Else if (anio >= 1980) and (anio <= 1990) then
 	deuda:= deuda * 2
 	
