@@ -11,21 +11,21 @@ Var
 	arancel,descuento:real;
 	actividad:longint;
 Begin
-write('ingrese el nombre del cliente : ');readln(cliente);
-write('Ingrese la cantidad de actividades : ');readln(actividad);
-arancel:= 50;
-descuento:= arancel * 0.90;
+	write('ingrese el nombre del cliente : ');readln(cliente);
+	write('Ingrese la cantidad de actividades : ');readln(actividad);
+	arancel:= 50;
+	descuento:= arancel * 0.90;
 
-If (actividad = 4) then
-begin
-	arancel:= descuento * actividad;
-	writeln('El cliente : ',cliente);
-	writeln('Debe abonar : $',arancel:2:0);
-end
-Else if(actividad = 5) then
-begin
-	arancel:= descuento * actividad;
-	writeln('El cliente : ',cliente);
-	writeln('Debe abonar : $',arancel:2:0);
-end;
+	If (actividad = 4) then
+	begin
+		arancel:= descuento * actividad;
+		writeln('El cliente : ',cliente);
+		writeln('Debe abonar : $',arancel:2:0);
+	end
+	Else if(actividad = 5) then
+	begin
+		arancel:= descuento * actividad;
+		writeln('El cliente : ',cliente);
+		writeln('Debe abonar : $',arancel:2:0);
+	end;
 end.

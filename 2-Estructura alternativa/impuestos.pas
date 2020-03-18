@@ -10,23 +10,23 @@ Var
 	anio:longint;
 	deuda:real;
 Begin
-write('Ingrese el anio de su deuda : ');readln(anio);
-write('Ingrese el monto de su deuda : ');readln(deuda);
+	write('Ingrese el anio de su deuda : ');readln(anio);
+	write('Ingrese el monto de su deuda : ');readln(deuda);
 
-If (anio < 1980) then
-	deuda:= 0
+	If (anio < 1980) then
+		deuda:= 0
 
-Else if (anio >= 1980) and (anio <= 1990) then
-	deuda:= deuda * 2
-	
-Else if (anio > 1990) and (anio <= 1999) then
-	deuda:= deuda + deuda
-	
-Else if (anio > 1999) and (anio <= 2009) then
-	deuda:= deuda * 1.7
+	Else if (anio >= 1980) and (anio <= 1990) then
+		deuda:= deuda * 2
+		
+	Else if (anio > 1990) and (anio <= 1999) then
+		deuda:= deuda + deuda
+		
+	Else if (anio > 1999) and (anio <= 2009) then
+		deuda:= deuda * 1.7
 
-Else if (anio > 2009) and (anio <= 2015) then
-	deuda:= deuda * 1.3;
-	
-writeln('Su deuda es : ',deuda:2:0);
-end.
+	Else if (anio > 2009) and (anio <= 2015) then
+		deuda:= deuda * 1.3;
+		
+	writeln('Su deuda es : ',deuda:2:0);
+	end.

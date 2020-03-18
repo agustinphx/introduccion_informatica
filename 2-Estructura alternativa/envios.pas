@@ -11,22 +11,22 @@ Var
 	categoria:char;
 	precio:real;
 Begin
-Write('Ingrese el peso del envio : ');readln(peso);
-Writeln('Ingrese la categoria : 1- Comun / 2- Especial / 3- aereo ');readln(categoria);
+	Write('Ingrese el peso del envio : ');readln(peso);
+	Writeln('Ingrese la categoria : 1- Comun / 2- Especial / 3- aereo ');readln(categoria);
 
-If (categoria = '1') then
-	precio:= peso * 2
-Else if (categoria = '2') then
-	precio:= peso * 2.5
-Else if (categoria = '3') then
-	precio:= peso * 3;
-	
-If (peso > 5) and (peso <= 10) then
-	precio:= precio * 1.10
-Else if (peso > 10) and (peso <= 15) then
-	precio:= precio * 1.20
-Else if (peso > 15) then
-	precio:=  precio *1.30;
+	If (categoria = '1') then
+		precio:= peso * 2
+	Else if (categoria = '2') then
+		precio:= peso * 2.5
+	Else if (categoria = '3') then
+		precio:= peso * 3;
+		
+	If (peso > 5) and (peso <= 10) then
+		precio:= precio * 1.10
+	Else if (peso > 10) and (peso <= 15) then
+		precio:= precio * 1.20
+	Else if (peso > 15) then
+		precio:=  precio *1.30;
 
-Write('El monto que debe abonar por su envio es : ',precio:2:0);
+	Write('El monto que debe abonar por su envio es : ',precio:2:0);
 end.

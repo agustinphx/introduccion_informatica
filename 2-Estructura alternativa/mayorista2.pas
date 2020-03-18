@@ -9,19 +9,19 @@ Var
 	unidades:integer;
 	precio:real;
 Begin
-write('Ingrese la cantidad de unidades que desea comprar : ');readln(unidades);
+	write('Ingrese la cantidad de unidades que desea comprar : ');readln(unidades);
+	precio:= 2;
+	If (unidades > 100) and (unidades <= 500) then
+		precio:= unidades * 0.95
 
-If (unidades > 100) and (unidades <= 500) then
-	precio:= unidades * 0.95
+	Else if (unidades > 500) and (unidades <= 2000) then
+		precio:= unidades * 0.93
 
-Else if (unidades > 500) and (unidades <= 2000) then
-	precio:= unidades * 0.93
+	Else if (unidades > 2000) and (unidades <= 10000) then
+		precio:= unidades * 0.9
 
-Else if (unidades > 2000) and (unidades <= 10000) then
-	precio:= unidades * 0.9
+	Else if (unidades > 10000) then
+		precio:= unidades * 0.85;
 
-Else if (unidades > 10000) then
-	precio:= unidades * 0.85;
-
-write('El preci a abonar es : ',precio:2:0);
+	write('El precio a abonar es : ',precio:2:0);
 end.
