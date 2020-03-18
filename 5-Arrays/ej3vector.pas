@@ -10,13 +10,13 @@ Procedure LeeVector(Var V:TV; Var N:byte);
 Var 
 	nums:integer;
 Begin
- Writeln('Ingrese un numero, 0 fin de datos '); Readln(nums);
- While nums <> 0 do
-   Begin
-     N:=N+1;
-     V[N]:=nums;
-     Writeln('Ingrese un numero, 0 fin de datos '); Readln(nums);
-   End
+	Writeln('Ingrese un numero, 0 fin de datos '); Readln(nums);
+	While nums <> 0 do
+	Begin
+		N:=N+1;
+		V[N]:=nums;
+		Writeln('Ingrese un numero, 0 fin de datos '); Readln(nums);
+	End;
 End;
 
 Procedure GeneraOtros(VNums:TV; N:byte; Var VPos:TV; Var VNeg:TV; Var ContPos:byte; Var ContNeg:byte);
@@ -26,7 +26,7 @@ Begin ContPos:= 0; ContNeg:=0;
   For i:=1 to N do
     if VNums[i] > 0 Then
       Begin
-        ContPos:=ContPos+1;
+		ContPos:=ContPos+1;
         VPos[ContPos]:=VNums[i]
       end
     else

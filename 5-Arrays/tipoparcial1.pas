@@ -14,16 +14,15 @@ Var
 	arch:text; 
 	i,j:byte;
 begin
-assign(arch,'tipoparcial1.txt');reset(arch);
-read(arch,N); readln(arch,M);
-For i:= 1 to N do
-	begin
-		For j:= 1 to M do
-			read(arch,matriz[i,j]);
-	    readln(arch,vector[i]);
-	end;
-	close(arch);
-
+	assign(arch,'tipoparcial1.txt');reset(arch);
+	read(arch,N); readln(arch,M);
+	For i:= 1 to N do
+		begin
+			For j:= 1 to M do
+				read(arch,matriz[i,j]);
+			readln(arch,vector[i]);
+		end;
+		close(arch);
 end;
 
 Function Promedio(matriz:TM; vector:TV; N,M:byte):real;
@@ -31,13 +30,13 @@ var
 	i:byte; 
 	divisor,suma:integer;
 Begin 
-suma:= 0; divisor := 0;
-For i:= 1 to M do
-Begin
-	If ((matriz[N,i] mod vector[N]) = 0) then
-	Begin
-		divisor := divisor + 1;
-		suma:= suma + matriz[N,i];
+	suma:= 0; divisor := 0;
+	For i:= 1 to M do
+	begin
+		If ((matriz[N,i] mod vector[N]) = 0) then
+		begin
+			divisor := divisor + 1;
+			suma:= suma + matriz[N,i];
 	end;
 end;
 If suma > 0 then
@@ -63,16 +62,16 @@ VAR
 Begin
 	prom:= 0;
 	k:=0;
-For i:= 1 to N do
-	Begin
-		prom:= Promedio(matriz,vector,i,M);
-		If(BusquedaPromedio(VProm,K,prom) = false) and ( prom <> 0) then
-			begin
-				k:=k+1;
-				VProm[k]:= prom;
-				VFila[k]:= i;
-			end;
-	end;
+	For i:= 1 to N do
+		Begin
+			prom:= Promedio(matriz,vector,i,M);
+			If(BusquedaPromedio(VProm,K,prom) = false) and ( prom <> 0) then
+				begin
+					k:=k+1;
+					VProm[k]:= prom;
+					VFila[k]:= i;
+				end;
+		end;
 end;	
 
 Procedure imprime(VProm:TR; VFila:TV; K:byte);

@@ -5,7 +5,8 @@ Var
 	A:TV;
 	N:byte;
 Procedure imprime(A:TV; N:byte);
-var i:byte;
+var 
+	i:byte;
 Begin
 	i:=0;
 	while(i< N) do
@@ -16,7 +17,8 @@ Begin
 end;
 
 Procedure LeeVector(var A:TV; Var N:byte);
-var arch:text; i:byte;
+var 
+	arch:text; i:byte;
 begin
 	i:=0;
 	assign(arch,'ImprimeArray.txt');
