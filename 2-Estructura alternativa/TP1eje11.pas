@@ -1,5 +1,5 @@
 {Un supermercado premia con descuentos las compras efectuadas por sus clientes.
-Por cada $100 descuenta $3 y sobre el excedente que no alcanza a $100 se aplica el siguiente
+Si alcanza los $100 descuenta $3 y sobre el excedente que no alcanza a $100 se aplica el siguiente
 descuento:
 Hasta $20 el 1.5 %
 Mas de $20 y hasta $50 el 2%
@@ -11,7 +11,7 @@ Var
 	precio,excedente:real;
 Begin
 	write('Ingrese el monto de la compra ? : ');readln(precio);
-	If (precio / 100) = 0 then  // Descuento de $3 por alcanzar los $100 en una compra.	
+	If (precio = 100) then  // Descuento de $3 por alcanzar los $100 en una compra.	
 		precio:= precio - 3
 	Else if (precio < 100) then	// Excedente que no alcanza los 100 se aplican los descuentos:
 		excedente:= 100 - precio;
