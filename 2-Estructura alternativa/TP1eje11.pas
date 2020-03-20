@@ -11,9 +11,9 @@ Var
 	precio,excedente:real;
 Begin
 	write('Ingrese el monto de la compra ? : ');readln(precio);
-	If (precio = 100) then  // Descuento de $3 por alcanzar los $100 en una compra.	
+	If (precio = 100) then // Descuento de $3 por alcanzar los $100 en una compra.	
 		precio:= precio - 3
-	Else if (precio < 100) then	// Excedente que no alcanza los 100 se aplican los descuentos:
+	Else if (precio < 100) then // Excedente que no alcanza los 100 se aplican los descuentos:
 		excedente:= 100 - precio;
 			
 	If (excedente >= 1) and (excedente <= 20) then
@@ -23,7 +23,7 @@ Begin
 	Else if (excedente > 50) and (excedente < 100) then
 		precio:= precio * 0.975; // Descuento del 2.5%}
 		
-	If (precio > 500) then  // Descuento del 1% por superar los $500 en una compra.
+	If (precio > 500) then // Descuento del 1% por superar los $500 en una compra.
 		precio:= precio * 0.99;
 	
 	writeln(' ');			
