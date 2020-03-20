@@ -27,8 +27,8 @@ Begin
 		writeln('Es una medicina fracasada');
 		
 	If (Positivos <= Neutros ) then
-		porcentaje:= (Positivos * Neutros) /100 ;
-	if (Positivos > Neutros) then
+		porcentaje:= (Positivos * Neutros) /100 
+	Else if (Positivos > Neutros) then
 		porcentaje:= (Positivos * Neutros) /100;
 		
 	writeln(' ');
