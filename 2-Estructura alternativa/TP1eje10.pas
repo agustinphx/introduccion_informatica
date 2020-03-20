@@ -14,8 +14,6 @@ Begin
 	write('Cuantas llamadas locales realizo? : ');readln(locales);
 	write('Cuantas llamadas interurbanas realizo? : ');readln(interurbanas);
 	write('Cuantas llamadas internacionales realizo? : ');readln(internacionales);
-	
-	
 	 
 	{Case locales of  // Creo que es mas eficiente con el case, con ambas soluciones compila bien.
 		100..199: puntos:= 25;
