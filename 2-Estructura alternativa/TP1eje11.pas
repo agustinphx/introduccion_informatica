@@ -16,7 +16,7 @@ Begin
 	Else if (precio < 100) then	// Excedente que no alcanza los 100 se aplican los descuentos:
 		excedente:= 100 - precio;
 			
- If(excedente >= 1) and (excedente <= 20) then
+	If(excedente >= 1) and (excedente <= 20) then
 		precio:= precio * 0.985 // Descuento del 1.5%
 	Else if (excedente >  20) and (excedente <= 50) then
 		precio:= precio * 0.98 // Descuento del 2%
