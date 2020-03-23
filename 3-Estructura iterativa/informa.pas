@@ -1,4 +1,4 @@
-{1.-Leer un número, calcular e informar la suma de los números naturales hasta ese número.}
+{-Leer un número, calcular e informar la suma de los números naturales hasta ese número.}
 Program informa;
 Var
 	i,N,ContNa,SumNa:word; 
