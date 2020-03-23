@@ -1,5 +1,5 @@
 {Leer un conjunto de N números enteros (distintos de cero),
-calcular el promedio de positivos y negativos}
+Calcular el promedio de positivos y negativos}
 Program Promedios;
 Var
 	ContP,ContN,SumP,N,i:word;

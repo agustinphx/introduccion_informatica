@@ -1,5 +1,5 @@
 {Leer un conjunto de N números enteros (distintos de cero),
-a - mostrar los impares y además contar e informar cuantos son pares.}
+Mostrar los impares y además contar e informar cuantos son pares.}
 Program ImprimeEnteros;
 Var
 	i,N,ContP:word;
