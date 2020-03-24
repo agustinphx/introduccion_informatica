@@ -5,8 +5,8 @@ Var
 	dia,horas:byte;
 	monto,dto:real;
 	CantAP,CantAN:word; //Cantidad de Autos que Pagaron,Cantidad de Autos que No 
-	Begin
-	Repeat
+Begin
+Repeat
 		clrscr;
 		CantAP:=0;
 		CantAN:=0;
@@ -23,7 +23,7 @@ Var
 		dto:=(dia*horas)*1.5-8;
 		writeln('El monto a pagar por este auto es ',monto:4:2);
 		readln(monto);
-	Until(dia>5);
+Until(dia>5);
 end.
 	 
 			 

@@ -51,8 +51,8 @@ begin
 	sum:=0;
 	while (i<=N) and (sum < A[i]) do
 	begin
-	sum:=sum+A[i];
-	i:=i+1;
+		sum:=sum+A[i];
+		i:=i+1;
 	end;
 	
 	if (i<=N) then
