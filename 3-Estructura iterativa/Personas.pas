@@ -6,7 +6,7 @@ promedio de edad de las mujeres.}
 Program personas;
 Var
 	edad,EdadF,EdadM,EdadTotal:integer;
-	i,N,ContTotal,ContF,ContM:word;
+	i,N,ContF,ContM:word;
 	promF,promM,PromTotal:real;
 	sexo:char;
 Begin
@@ -33,10 +33,9 @@ Begin
 		end;
 	end;
 	promF:= EdadF / ContF;
-	promM:= EdadM / ContM;
-	ContTotal:= ContF + ContM; //Sumamos la cantidad de femeninos y masculinos.
+	promM:= EdadM / ContM; //Sumamos la cantidad de femeninos y masculinos.
 	EdadTotal:= EdadF + EdadM; // Sumamos todas las edades.
-	PromTotal:= EdadTotal / ContTotal; //Dividimos el total de las edades con el total de personas.
+	PromTotal:= EdadTotal / N; //Dividimos el total de las edades con el total de personas.
 	writeln('El porcentaje de mujeres es del: ',ContF / N *100:2:0,' %');
 	writeln('El promedio de la edad de las mujeres es: ',promF:2:0);  
 	writeln(' '); 
