@@ -32,10 +32,10 @@ Begin
 			EdadM:= EdadM + edad;
 		end;
 	end;
-	promF:= EdadF / ContF;
-	promM:= EdadM / ContM; //Sumamos la cantidad de femeninos y masculinos.
+	promF:= EdadF / ContF;//Dividimos todas las edades ingresadas en femenino por la cantidad de estas.
+	promM:= EdadM / ContM; //Dividimos todas las edades ingresadas en masculino por la cantidad de estas.
 	EdadTotal:= EdadF + EdadM; // Sumamos todas las edades.
-	PromTotal:= EdadTotal / N; //Dividimos el total de las edades con el total de personas.
+	PromTotal:= EdadTotal / N; //Dividimos el total de las edades con el total de personas para obtener la edad promedio.
 	writeln('El porcentaje de mujeres es del: ',ContF / N *100:2:0,' %');
 	writeln('El promedio de la edad de las mujeres es: ',promF:2:0);  
 	writeln(' '); 
