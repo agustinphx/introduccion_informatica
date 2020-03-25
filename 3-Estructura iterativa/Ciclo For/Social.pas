@@ -62,5 +62,5 @@ Begin
 	writeln('El descuento total es de: $',dtoTotal:2:0);
 	writeln(' ');
 	writeln('Operaciones en venta libre:',ContL:2:0, ' y el importe total en este rubro es: $',acumL:2:0,' (sin descuento aplicado)');
-	writeln('El monto de venta maximo es: ',max:2:0,' y pertenece al rubo: ',rubro);
+	writeln('El monto de venta maximo es: $',max:2:0,' y pertenece al rubo: ',rubro);
 end.
