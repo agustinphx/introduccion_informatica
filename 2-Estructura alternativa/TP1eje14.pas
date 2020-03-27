@@ -15,7 +15,7 @@ Begin
 	
 	If (vehiculo = 'P') then
 		precio:= horas * 5
-	Else if (vehiculo = 'C') then
+	Else 
 		precio:= horas * 6;
 		
 	Case horas of

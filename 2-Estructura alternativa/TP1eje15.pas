@@ -21,15 +21,18 @@ Begin
 	
 	If (Positivos > Suma) and (Negativos < Neutros) then
 		writeln('Es una medicina exitosa')
-	Else if (Positivos > Suma) then
-		writeln('Es una medicina neutra')
-	Else if (Positivos <= Suma) then
-		writeln('Es una medicina fracasada');
-		
+	Else
+		if (Positivos > Suma) then
+			writeln('Es una medicina neutra')
+		Else 
+			if (Positivos <= Suma) then
+				writeln('Es una medicina fracasada');
+			
 	If (Positivos <= Neutros ) then
 		porcentaje:= (Positivos * Neutros) /100 
-	Else if (Positivos > Neutros) then
-		porcentaje:= (Positivos * Neutros) /100;
+	Else 
+		if (Positivos > Neutros) then
+			porcentaje:= (Positivos * Neutros) /100;
 		
 	writeln(' ');
 	writeln('El porcentaje de positivos sobre los no negativos es del: ',porcentaje:2:0,' %');

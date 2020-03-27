@@ -11,14 +11,16 @@ Var
 Begin
 	write('Ingrese el valor de cada materia : ');readln(precio);
 	write('Ingrese la cantidad de materias : ');readln(materias);
+	write('En que dia se va anotar ? ');readln(dia);
+
 	If (materias > 3) then
 		precio:= precio * materias * 0.85;
-	
-	write('En que dia se va anotar ? ');readln(dia);
+		
 	Case dia of
 		1..5: precio:= precio * 0.95;
 		25..31: precio:= precio * 1.12;
 	end;
+	
 	write('El arancel a abonar es : ',precio:2:0);
 end.
 

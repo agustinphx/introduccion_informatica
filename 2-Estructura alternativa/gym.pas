@@ -22,10 +22,11 @@ Begin
 		writeln('El cliente : ',cliente);
 		writeln('Debe abonar : $',arancel:2:0);
 	end
-	Else if(actividad = 5) then
-	begin
-		arancel:= descuento * actividad;
-		writeln('El cliente : ',cliente);
-		writeln('Debe abonar : $',arancel:2:0);
-	end;
+	Else 
+		if(actividad = 5) then
+		begin
+			arancel:= descuento * actividad;
+			writeln('El cliente : ',cliente);
+			writeln('Debe abonar : $',arancel:2:0);
+		end;
 end.

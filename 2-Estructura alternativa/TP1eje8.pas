@@ -18,15 +18,14 @@ Begin
 	
 	If (propietario = 'S') and (inmueble >= 1000000) and (sueldo <= 1000) then
 		write('Es merecedor del credito')
-	
-	Else if (propietario = 'S') and (inmueble < 1000000) and (sueldo > 1000) then
-		write('Es merecedor del credito')
-		
-	Else if (propietario = 'N') and (antiguedad > 5) and (sueldo > 1500) then
-		write('Es merecedor del credito')
-	
-	Else 
-		write('No merece el credito');
+	Else
+		if (propietario = 'S') and (inmueble < 1000000) and (sueldo > 1000) then
+			write('Es merecedor del credito')	
+		Else 
+			if (propietario = 'N') and (antiguedad > 5) and (sueldo > 1500) then
+				write('Es merecedor del credito')	
+			Else 
+				write('No merece el credito');
 end.
 	
 		

@@ -12,51 +12,57 @@ aparezca más de una vez, considerar el primero).
  
   Program Guia2Vectores; uses crt;
   TYPE TV=array[1..100] of integer;
-  VAR knums,mult:integer; VNums:TV;
+  Var 
+	knums,mult:integer; VNums:TV;
     
   Procedure CreaVector(Var VNums:TV; knums:integer);
-    Var i:integer;
+    Var
+		i:integer;
     Begin
       for i:=1 to knums do
         begin
-        Writeln('Le pediremos los numeros que compongan el vector. Ingrese numero ',i);
-        Readln(VNums[i]);
+			Writeln('Le pediremos los numeros que compongan el vector. Ingrese numero ',i);
+			Readln(VNums[i]);
         end;
     End;
     
 
   Procedure Conteo(Var VNums:TV; knums:integer);
-    Var i:integer; contpares,contimpares,contnulos:integer;
+    Var 
+		i:integer; contpares,contimpares,contnulos:integer;
     Begin contpares:=0; contimpares:=0; contnulos:=0;
       for i:=1 to knums do
       Begin 
         if (Vnums[i]) = 0 then
-          contnulos:=contnulos+1
+			contnulos:=contnulos+1
         else
-          if Odd (Vnums[i]) then
-            contimpares:=contimpares+1
-          else
-            if Not Odd (Vnums[i]) then
-              contpares:=contpares+1                  
+			if Odd (Vnums[i]) then
+				contimpares:=contimpares+1
+			else
+				if Not Odd (Vnums[i]) then
+				contpares:=contpares+1                  
       end;
+      
     writeln('La cantidad de pares es ',contpares);
     writeln('La cantidad de impares es ',contimpares);
     writeln('La cantidad de nulos es ',contnulos)  
     end;
     
-     Procedure Multiplicar(Var VNums:TV; knums:integer; mult:integer);
-    Var i,aux:integer;
+    Procedure Multiplicar(Var VNums:TV; knums:integer; mult:integer);
+    Var 
+		i,aux:integer;
     Begin 
       for i:=1 to knums do
         if (VNums[i]) <> 0 then
           Begin
             aux:=(Vnums[i])*mult;
             writeln(aux)
-          End;                  
+          end;                  
     end;
     
     Procedure maximo(Var VNums:TV; knums:integer);
-    Var i,max,pos:integer;
+    Var 
+		i,max,pos:integer;
     Begin max:=0;
       for i:=1 to knums do
         if (VNums[i]) > max then
@@ -69,8 +75,10 @@ aparezca más de una vez, considerar el primero).
     end;
 
     Procedure repetidos(VNums:TV; knums:integer);
-    Var ref,conteorep,m,cual,num,numdef,i:integer;
-    Begin conteorep:=1; cual:=0;
+    Var 
+		ref,conteorep,m,cual,num,numdef,i:integer;
+    Begin 
+		conteorep:=1; cual:=0;
       for i:=1 to knums do //revisame todo el array
         Begin
           ref:=VNums[i]; //el numero de referencia es cada uno del array

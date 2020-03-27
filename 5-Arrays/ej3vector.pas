@@ -23,17 +23,17 @@ Procedure GeneraOtros(VNums:TV; N:byte; Var VPos:TV; Var VNeg:TV; Var ContPos:by
 Var 
 	i:byte;
 Begin ContPos:= 0; ContNeg:=0;
-  For i:=1 to N do
+	For i:=1 to N do
     if VNums[i] > 0 Then
-      Begin
+    Begin
 		ContPos:=ContPos+1;
         VPos[ContPos]:=VNums[i]
-      end
+    end
     else
-      Begin
+    Begin
         ContNeg:=ContNeg+1;
         VNeg[ContNeg]:=VNums[i]
-      End
+    end;
 End;
 
 Procedure Compara(VPos:TV; VNeg:TV; ContPos:byte; ContNeg:byte); 
@@ -42,14 +42,14 @@ Var
 Begin
   writeln('A continuacion se escribiran los numeros del vector mas numeroso');
   if ContPos>ContNeg then
-    for i:=1 to ContPos do
-      writeln(VPos[i])
+	for i:=1 to ContPos do
+	writeln(VPos[i])
   else
-    for i:=1 to ContNeg do
-      writeln(VNeg[i]);    
+	for i:=1 to ContNeg do
+	writeln(VNeg[i]);    
 End;
 
-VAR 
+Var 
 	N,ContPos,ContNeg:byte; VNums,VPos,VNeg:TV;
 Begin
   LeeVector(VNums,N); //Crea el vector y le asigna los numeros

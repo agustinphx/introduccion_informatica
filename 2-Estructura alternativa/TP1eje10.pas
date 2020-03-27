@@ -30,18 +30,23 @@ Begin
 	
 	If (locales >=100) and (locales < 200) then
 		puntos:= 25
-	Else if (locales >= 200) then
-		puntos:= 30
-	Else if (interurbanas >= 20) and (interurbanas <= 39) then
-		puntos:= 15
-	Else if (interurbanas >= 40)  then	
-		puntos:= 20
-	Else if (internacionales >= 5) and (internacionales <= 9) then
-		puntos:= 3
-	Else if (internacionales >= 10) then
-		puntos:= 8
-	Else if (locales >= 100) and (interurbanas >= 20) and (internacionales >= 5) then
-		puntos:= puntos + 5;
+	Else 
+		if (locales >= 200) then
+			puntos:= 30
+		Else
+			if (interurbanas >= 20) and (interurbanas <= 39) then
+				puntos:= 15
+			Else 
+				if (interurbanas >= 40)  then	
+					puntos:= 20
+				Else 
+					if (internacionales >= 5) and (internacionales <= 9) then
+						puntos:= 3
+					Else
+						if (internacionales >= 10) then
+							puntos:= 8
+						Else 
+							puntos:= puntos + 5;
 	
 	write('Los puntos del cliente son : ',puntos);
 end.

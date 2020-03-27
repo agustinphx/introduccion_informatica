@@ -22,12 +22,11 @@ Begin
 	end;
 	
 	If (peso <= 50) then
-		writeln(' , talle 1')
-		
-	Else if (peso > 50) and (peso <= 80) then
-		writeln(', talle 2')
-		
-	Else if (peso > 80) then
-		writeln(', talle 3');
+		writeln(' , talle 1')	
+	Else
+		if (peso <= 80) then
+			writeln(', talle 2')		
+		Else 
+			writeln(', talle 3');
 		
 end.

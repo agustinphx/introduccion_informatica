@@ -46,17 +46,17 @@ Begin
 				acumDto:= acumDto + dto;
 				writeln('El importe a pagar por esta venta es: $',(venta - dto):2:0,' (con descuento aplicado)');
 			end
-		Else
-			If (rubro = 'A')  and (Max < venta) then
-			begin
-				Max:= venta;
-				acumV:= acumV + venta;
-				dto:= venta * 0.05;
-				acumDto:= acumDto + dto; // Acumula todos los descuentos
-				writeln('El importe a pagar por esta venta es: $',(venta - dto):2:0,' (con descuento aplicado)'); 
-			end;
-			dtoTotal:= acumDto; // Renombramos la variable.
-			venta:= acumV - acumDto; // Restamos el total de venta con el total de descuento para obtener el monto a pagar.
+			Else
+				If (rubro = 'A')  and (Max < venta) then
+				begin
+					Max:= venta;
+					acumV:= acumV + venta;
+					dto:= venta * 0.05;
+					acumDto:= acumDto + dto; // Acumula todos los descuentos
+					writeln('El importe a pagar por esta venta es: $',(venta - dto):2:0,' (con descuento aplicado)'); 
+				end;
+				dtoTotal:= acumDto; // Renombramos la variable.
+				venta:= acumV - acumDto; // Restamos el total de venta con el total de descuento para obtener el monto a pagar.
 	end;
 	writeln(' ');
 	writeln('El descuento total es de: $',dtoTotal:2:0);

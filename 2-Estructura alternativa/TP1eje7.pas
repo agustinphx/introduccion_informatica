@@ -17,11 +17,10 @@ Begin
 	
 	If (parcialUno >= 4) and (parcialDos > 6) and (suma >= 14)then
 		write('El alumno esta promovido')
-		
-	Else if (suma >= 10) and (suma <= 14) then
-		write('El alumno esta habilitado')
-		
-	Else if (suma < 10) then
-		write('El alumno esta desaprobado');
+	Else
+		if (suma >= 10) then
+			write('El alumno esta habilitado')
+		Else 
+			write('El alumno esta desaprobado');
 end.
 

@@ -26,6 +26,7 @@ Begin
 	
 	If (hectareas > 100) then
 		precio:= precio * 0.95;
+		
 	If( precio > 1500) then
 	begin
 		cantExcedida:= (precio - 1500) *0.9;

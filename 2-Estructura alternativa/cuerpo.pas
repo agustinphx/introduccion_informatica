@@ -14,12 +14,11 @@ Begin
 	masaCorporal:= peso / altura;
 
 	If (masaCorporal < 18) then
-		writeln('Es una persona delgada');
-
-	if(masaCorporal >= 18) and (masaCorporal <= 25) then
-		writeln('Es una persona normal');
-
-	if(masaCorporal > 25) then
-		writeln('Es una persona obesa');
+		writeln('Es una persona delgada')
+	Else
+		if(masaCorporal <= 25) then
+			writeln('Es una persona normal')
+		Else
+				writeln('Es una persona obesa');
 end.
 

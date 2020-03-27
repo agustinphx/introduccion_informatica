@@ -16,17 +16,16 @@ Begin
 		writeln('El deporte es : esqui')
 	Else
 		If (temperatura < 3) then
-		writeln('El deporte es : ajedrez')
-	Else
-		If (temperatura < 10) then
-		writeln('El deporte es : golf')
-	Else	
-		If (temperatura < 18) then
-		writeln('El deporte es : ciclismo')
-	Else
-		If (temperatura < 28)  then
-		writeln('El deporte es: tenis')
-	Else	
-		
-		writeln('El deporte es : natacion');
+			writeln('El deporte es : ajedrez')
+		Else
+			If (temperatura < 10) then
+				writeln('El deporte es : golf')
+			Else	
+				If (temperatura < 18) then
+					writeln('El deporte es : ciclismo')
+				Else
+					If (temperatura < 28)  then
+						writeln('El deporte es: tenis')
+					Else	
+						writeln('El deporte es : natacion');
 end.

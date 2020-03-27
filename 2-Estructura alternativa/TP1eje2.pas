@@ -15,11 +15,12 @@ Begin
 	
 	If(cereal = 'T') then
 		precio:= 38000
-	Else if(cereal = 'G') then
-		precio:= 56000
-	Else if (cereal = 'S') then
-		precio:= 67000;
-		
+	Else 
+		if (cereal = 'G') then
+			precio:= 56000
+		Else
+			precio:= 67000;
+			
 	If(humedad > 10) then
 		precio:= precio * 0.92;
 		

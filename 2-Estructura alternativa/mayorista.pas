@@ -10,9 +10,10 @@ Begin
 
 	If(cantidad = 12) then
 		precio:= cantidad * 6
-	Else if (cantidad >= 24) and (cantidad < 30) then
-		precio:= cantidad * 5
-	Else if(cantidad >= 30) then
-		precio:= cantidad * 4;
+	Else 
+		if (cantidad < 30) then
+			precio:= cantidad * 5
+		Else
+			precio:= cantidad * 4;
 	writeln('El precio a pagar es: ',precio:2:0);
 end.

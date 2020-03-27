@@ -19,18 +19,17 @@ Begin
 	
 	If (velocidad < 10) then
 		write('La sensacion termica es: ',temperatura,'º C')
-		
-	Else if (velocidad >= 10) and (humedad <= 50) and (direccion = 'S') or (direccion = 'O') then
-		write('La sensacion termica es: ',temperatura - 3,'º C')
-		
-	Else if (velocidad >= 10) and (humedad > 50) and (direccion = 'S') or (direccion = 'O') then
-		write('La sensacion termica es: ',temperatura - 4,'º C')
-		
-	Else if (velocidad >= 10) and (humedad <= 50) and (direccion = 'N') or (direccion = 'E') then
-		write('La sensacion termica es: ',temperatura - 1,'º C')
-	
- 	Else if (velocidad >= 10) and (humedad > 50) and (direccion = 'N') or (direccion = 'E') then
-		write('La sensacion termica es: ',temperatura - 2,'º C');
+	Else 
+		if (velocidad >= 10) and (humedad <= 50) and (direccion = 'S') or (direccion = 'O') then
+			write('La sensacion termica es: ',temperatura - 3,'º C')
+		Else
+			if (velocidad >= 10) and (humedad > 50) and (direccion = 'S') or (direccion = 'O') then
+				write('La sensacion termica es: ',temperatura - 4,'º C')	
+			Else
+				if (velocidad >= 10) and (humedad <= 50) and (direccion = 'N') or (direccion = 'E') then
+					write('La sensacion termica es: ',temperatura - 1,'º C')	
+				Else 
+					write('La sensacion termica es: ',temperatura - 2,'º C');
 end.
 	
 	

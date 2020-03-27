@@ -8,7 +8,6 @@ Begin
 	SumDto:= 0;
 	SinDto:= 0;
 	dto:= 0;
-	
 	write('Ingrese la cantidad de ventas: ');readln(N);
 	writeln(' ');
 	

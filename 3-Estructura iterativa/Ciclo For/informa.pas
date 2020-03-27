@@ -18,6 +18,4 @@ Begin
 	end;
 	writeln(' ');
 	writeln('La suma de los naturales es: ',SumNa);
-	If (num < 0) then
-		writeln('No se ingresaron numeros naturales');
 end.

@@ -15,10 +15,9 @@ Begin
 	
 	If (altura > 2.5) and (distancia > 2.5) then
 		write('El salto es : Bueno')
-	
-	Else if (altura > 2.5) or (distancia > 2.5) then
-		write('El salto es : Normal')
-	
-	Else if (altura < 2.5) or (distancia < 2.5) then
-		write('El salto es : Malo');
+	Else 
+		if (altura > 2.5) or (distancia > 2.5) then
+			write('El salto es : Normal')
+		Else 
+			write('El salto es : Malo');
 end.

@@ -26,11 +26,12 @@ Begin
 			ContF:= ContF + 1;
 			EdadF:= EdadF + edad;
 		end
-		Else if (sexo = 'M') then
-		begin
-			contM:= ContM + 1;	
-			EdadM:= EdadM + edad;
-		end;
+		Else 
+			if (sexo = 'M') then
+			begin
+				contM:= ContM + 1;	
+				EdadM:= EdadM + edad;
+			end;
 	end;
 	promF:= EdadF / ContF;//Dividimos todas las edades ingresadas en femenino por la cantidad de estas.
 	promM:= EdadM / ContM; //Dividimos todas las edades ingresadas en masculino por la cantidad de estas.

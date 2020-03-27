@@ -17,12 +17,14 @@ function calcularSobrepeso (categoria:char;peso:byte):byte;
 begin
     if ((categoria = 'A') and (peso > 40)) then
         calcularSobrepeso := peso - 40
-    else if ((categoria = 'B') and (peso > 30)) then
-        calcularSobrepeso := peso - 30
-    else if ((categoria = 'C') and (peso > 23)) then
-        calcularSobrepeso := peso - 23
-    else
-        calcularSobrepeso := 0;
+    else 
+		if ((categoria = 'B') and (peso > 30)) then
+			calcularSobrepeso := peso - 30
+		else 
+			if ((categoria = 'C') and (peso > 23)) then
+				calcularSobrepeso := peso - 23
+			else
+				calcularSobrepeso := 0;
 end;
 
 Begin
@@ -43,6 +45,7 @@ Begin
                 begin
                     readln(archivo, categoria, peso);
                     sobrepeso := calcularSobrepeso(categoria, peso);
+                    
                     case categoria of
                         'A':sobrepesoA := sobrepesoA + calcularSobrepeso(categoria, peso);
                         'B':sobrepesoB := sobrepesoB + calcularSobrepeso(categoria, peso);

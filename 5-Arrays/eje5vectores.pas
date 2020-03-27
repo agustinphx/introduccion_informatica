@@ -1,11 +1,6 @@
-
-
 Program vectores;
-
 Type
 	TV = array [1..100000] of integer;
-	
-	
 Var
 	V:TV;
 	N:byte;

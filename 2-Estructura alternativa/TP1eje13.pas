@@ -27,12 +27,14 @@ Begin
 	
 	If (porcentaje < 10) then
 		writeln('La produccion es: Muy buena')
-	Else if (gradoUno >= 10) and (gradoUno < 20) and not (gradoDos < 20) then
-		writeln('La produccion es: Buena')
-	Else If (gradoUno = gradoDos) then
-		writeln('La produccion es: Regular')
-	Else if (gradoUno >= 20) or (gradoDos >= 20) then
-		writeln('La produccion es: Mala');
+	Else
+		if (gradoUno >= 10) and (gradoUno < 20) and not (gradoDos < 20) then
+				writeln('La produccion es: Buena')
+		Else 
+			If (gradoUno = gradoDos) then
+				writeln('La produccion es: Regular')
+			Else 
+				writeln('La produccion es: Mala');
 		
 	writeln(' ');
 	writeln('El porcentaje de fallas totales es: ',porcentaje:2:0,' %');

@@ -5,12 +5,12 @@
     TVA=array[1..100] of word;
     TVP=array[1..100] of longint;
 
-  Procedure LeeVector(Var TVAno:TVA; Var TVPrec:TVP; Var TVPt:TVPat; Var N:Byte);
-  Var 
+Procedure LeeVector(Var TVAno:TVA; Var TVPrec:TVP; Var TVPt:TVPat; Var N:Byte);
+Var 
 	Arch:text; basura:char;
-  Begin
-    Assign(Arch,'Autos.txt'); Reset(Arch);
-    N:=0;
+Begin
+	Assign(Arch,'Autos.txt'); Reset(Arch);
+	N:=0;
     while not eof(Arch) do
       Begin
         N:=N+1;
@@ -19,10 +19,10 @@
   Close(Arch);
   End;
 
-  Procedure PrecioMinimo(TVAno:TVA; TVPrec:TVP; N:Byte);
-  Var 
+Procedure PrecioMinimo(TVAno:TVA; TVPrec:TVP; N:Byte);
+Var 
 	anio:word; minimo:longint; i:byte;
-  Begin 
+Begin 
 	minimo:=999999;
     writeln('Ingrese el anio del cual quiere saber el precio minimo'); readln(anio);
     for i:=1 to N do
@@ -39,10 +39,10 @@
       writeln('El auto mas barato de ese anio sale ',minimo)
    end;
    
-  Procedure BajoValor(TVAno:TVA; TVPrec:TVP; N:Byte);
-  Var 
+Procedure BajoValor(TVAno:TVA; TVPrec:TVP; N:Byte);
+Var 
 	i,cant:byte; precio:longint;
-  Begin 
+Begin 
 	cant:=0;
     writeln('Ingrese el precio de referencia'); readln(precio);
     for i:=1 to N do
@@ -57,11 +57,11 @@
   end;
   
  
-  Procedure PromedioRango(TVAno:TVA; TVPrec:TVP; N:byte);
-  Var 
+Procedure PromedioRango(TVAno:TVA; TVPrec:TVP; N:byte);
+Var 
 	i,cant:byte; anioinf,aniosup:longint; preciolocal:longint; promedio:real;
-  Begin
-   preciolocal:=0; cant:=0;
+Begin
+	preciolocal:=0; cant:=0;
     writeln('Ingrese el anio inferior'); readln(anioinf);
     writeln('Ingrese el anio superior'); readln(aniosup);
     for i:=1 to N do
@@ -82,10 +82,10 @@
       writeln('No existen autos en esos anios');   
   End;
   
-  Procedure Patentes(TVAno:TVA; TVPt:TVPat; N:byte; VAR TVPatNuevo:TVPat);
-  Var 
+Procedure Patentes(TVAno:TVA; TVPt:TVPat; N:byte; VAR TVPatNuevo:TVPat);
+Var 
 	i:byte;
-  Begin
+Begin
     for i:=1 to N do
     Begin
       if (TVAno[i] > 2018) then
@@ -100,8 +100,10 @@
   end;
   
    
-  Var TVAno:TVA; TVPrec:TVP; TVPt,TVPatNuevo:TVPat; N:byte; opcion:char;
-  Begin clrscr;
+Var 
+	TVAno:TVA; TVPrec:TVP; TVPt,TVPatNuevo:TVPat; N:byte; opcion:char;
+Begin 
+clrscr;
     LeeVector(TVAno,TVPrec,TVPt,N);
     writeln('------------BIENVENIDO, QUE QUIERE HACER?------------');
     writeln();
@@ -114,11 +116,14 @@
     
     if opcion='1' then
       PrecioMinimo(TVAno,TVPrec,N)
-    else if opcion='2' then
-      BajoValor(TVAno,TVPrec,N)
-    else if opcion='3' then
-      PromedioRango(TVAno,TVPrec,N)
-    else if opcion='4' then
-      Patentes(TVAno,TVPt, N, TVPatNuevo);
+    else 
+		if opcion='2' then
+			BajoValor(TVAno,TVPrec,N)
+		else 
+			if opcion='3' then
+				PromedioRango(TVAno,TVPrec,N)
+			else 
+				if opcion='4' then
+				Patentes(TVAno,TVPt, N, TVPatNuevo);
     
   End. 

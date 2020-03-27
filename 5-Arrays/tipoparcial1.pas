@@ -63,15 +63,15 @@ Begin
 	prom:= 0;
 	k:=0;
 	For i:= 1 to N do
-		Begin
-			prom:= Promedio(matriz,vector,i,M);
-			If(BusquedaPromedio(VProm,K,prom) = false) and ( prom <> 0) then
-				begin
-					k:=k+1;
-					VProm[k]:= prom;
-					VFila[k]:= i;
-				end;
+	Begin
+		prom:= Promedio(matriz,vector,i,M);
+		If(BusquedaPromedio(VProm,K,prom) = false) and ( prom <> 0) then
+		begin
+			k:=k+1;
+			VProm[k]:= prom;
+			VFila[k]:= i;
 		end;
+	end;
 end;	
 
 Procedure imprime(VProm:TR; VFila:TV; K:byte);
@@ -79,9 +79,10 @@ var
 	i:byte;
 begin
 	For i:= 1 to K do
+	begin
 		write(' ',VProm[i]:8:2);
-	
-	writeln();
+		writeln();
+	end;
 	for i:=1 to K do
 		write(' ',VFila[i]);
 end;

@@ -6,9 +6,8 @@ TV=array[1..100] of integer;
 Procedure insertarOrdenado(var A:TV; N,B:integer);
 var 
 	i:byte;
-begin  ///ORDENADO POR INSERCION
+begin  ///Ordenado por inserccion
 	i:=N;
-
 	while (i>0) and (B < A[i]) do
 	begin
 		A[i+1] := A[i];
@@ -33,11 +32,12 @@ begin
 			i:= i+1;
 			A[i]:=B;
 		end;
-		 if (i=0) then
-		 begin
-			i:= i+1;
-			A[i]:=B;
-		 end;
+		Else
+			if (i=0) then
+			begin
+				i:= i+1;
+				A[i]:=B;
+			end;
 	end;
 	N:=i;
 	close(arch);

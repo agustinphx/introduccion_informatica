@@ -20,16 +20,17 @@ Begin
 		writeln('El tamanio de la carga es: chico');
 		precio:= peso * 2.5;
 	end
-	Else if (peso > 5) and (peso <= 10) and (lado <= 90) then
-	begin
-		writeln('El tamanio de la carga es: mediano');
-		precio:= peso * 3;
-	end
-	Else if (peso > 10) and (lado > 90) then
-	begin
-		writeln('El tamanio de la carga es: grande');
-		precio:= peso * 5;
-	end;
+	Else 
+		if (peso <= 10) and (lado <= 90) then
+		begin
+			writeln('El tamanio de la carga es: mediano');
+			precio:= peso * 3;
+		end
+		Else 
+			begin
+				writeln('El tamanio de la carga es: grande');
+				precio:= peso * 5;
+			end;
 	writeln(' ');
 	writeln('El costo de la carga es : ',precio:2:0);
 end.

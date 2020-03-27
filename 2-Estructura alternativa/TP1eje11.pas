@@ -13,19 +13,22 @@ Begin
 	write('Ingrese el monto de la compra ? : ');readln(precio);
 	If (precio = 100) then // Descuento de $3 por alcanzar los $100 en una compra.	
 		precio:= precio - 3
-	Else if (precio < 100) then 
-		excedente:= 100 - precio; // Excedente que no alcanza los 100 se aplican los descuentos:
+	Else
+		if (precio < 100) then 
+			excedente:= 100 - precio // Excedente que no alcanza los 100 se aplican los descuentos
+		Else
+			If (precio > 500) then // Descuento del 1% por superar los $500 en una compra.
+				precio:= precio * 0.99;
 			
 	If (excedente >= 1) and (excedente <= 20) then
 		precio:= precio * 0.985 // Descuento del 1.5%
-	Else if (excedente >  20) and (excedente <= 50) then
-		precio:= precio * 0.98 // Descuento del 2%
-	Else if (excedente > 50) and (excedente < 100) then
-		precio:= precio * 0.975; // Descuento del 2.5%}
-		
-	If (precio > 500) then // Descuento del 1% por superar los $500 en una compra.
-		precio:= precio * 0.99;
-	
+	Else 
+		if (excedente >  20) and (excedente <= 50) then
+			precio:= precio * 0.98 // Descuento del 2%
+		Else
+			if (excedente > 50) and (excedente < 100) then
+				precio:= precio * 0.975; // Descuento del 2.5%}
+				
 	writeln(' ');			
 	writeln('El precio final con descuento es: $',precio:2:0);
 	writeln(' ');

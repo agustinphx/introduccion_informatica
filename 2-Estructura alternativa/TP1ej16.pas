@@ -22,11 +22,11 @@ Begin
 	
 	If (peso > 15) then
 		precio:= precio * 1.3
-	Else if (peso > 10) and (peso <= 15) then
-		precio:= precio * 1.2
-	Else if (peso > 5) and (peso <= 10) then
-		precio:= precio * 1.1;
-		
+	Else 
+		if (peso >= 10) then
+			precio:= precio * 1.2
+		Else 
+			precio:= precio * 1.1;
 	writeln(' ');
 	writeln('El precio de su carga es: ',precio:2:0);
 end.

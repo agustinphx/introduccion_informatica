@@ -10,19 +10,20 @@ Begin
 	Readln(Num);
 	While Num <> 0 do
 	Begin
-	If Num > 0 then
-	Begin
-		ContP:= ContP +1;
-		SumP:= SumP + Num;
-	End
-	Else
-	Begin
-		ContN:= ContN +1;
-		SumN:= SumN + Num;
-	End;
+		If Num > 0 then
+		begin
+			ContP:= ContP +1;
+			SumP:= SumP + Num
+		end
+		Else
+		Begin
+			ContN:= ContN +1;
+			SumN:= SumN + Num;
+		end;
+	end;
 	Write('Ingresar un numero :');
 	Readln(num);
-	End;
+	
 	If ContP <> 0 then
 		Writeln('Promedio positivos :',SumP DIV ContP)
 	Else
