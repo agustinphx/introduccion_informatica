@@ -13,6 +13,7 @@ Begin
 	Cont:= 0;
 	write('Ingrese el minimo intervalo: ');readln(A);
 	write('Ingrese el maximo intervalo: ');readln(B);
+	writeln(' ');
 	write('Ingrese la cantidad de numeros: ');readln(N);
 	For i:= 1 to N do
 	begin
@@ -23,7 +24,10 @@ Begin
 			Cont:= Cont + 1;
 		end
 		Else
+		begin
 			writeln('No es un numero dentro del intervalo');
+			writeln(' ');
+		end;
 	end;
 	prom:= Suma / Cont;
 	writeln('El promedio dentro del intervalo es: ',prom:2:2);	
