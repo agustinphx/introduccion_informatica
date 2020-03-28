@@ -6,7 +6,7 @@ Var
 Begin
 	ContP:=0; ContN:=0;
 	SumP:=0; SumN:=0;
-	Write ('Ingresar un numero :');
+	Write ('Ingresar un numero : ');
 	Readln(Num);
 	While Num <> 0 do
 	Begin
