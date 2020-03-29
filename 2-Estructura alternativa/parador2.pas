@@ -37,28 +37,3 @@ Begin
 	writeln('el monto a abonar por las clases es : $',monto:2:0);
 end.
 
-
-{	clases:byte;
-	monto:real;
-	equipo,vip:char;
-Begin
-	write('ingrese la cantidad de clases : ');readln(clases);
-	write('Tiene equipo propio? S / N : ');readln(equipo);
-	write('Es cliente VIP? S / N : ');readln(vip);
-
-	If(clases <= 5) then
-		monto:= clases * 30
-	Else	
-		If(clases <= 12) then
-			monto:= clases * 25
-		Else
-			monto:= clases * 18;
-			
-	If(equipo = 'N') then
-		monto:= monto + 5;
-
-	If(vip = 'S') then
-		monto:= monto * 0.85;
-		
-	writeln('el monto a abonar por las clases es : $',monto:2:0);
-end.}
