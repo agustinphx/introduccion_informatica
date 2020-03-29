@@ -21,9 +21,9 @@ Begin
 	write('Tiene tarjeta VIP? S / N : ');readln(vip);
 		
 	Case clases of
-	1..5:    monto:= clases * 30;
-	6..12:   monto:= clases * 25;
-	13..100: monto:= clases * 18;
+		1..5:    monto:= clases * 30;
+		6..12:   monto:= clases * 25;
+		13..100: monto:= clases * 18;
 	end;
 	
 	Case equipo of

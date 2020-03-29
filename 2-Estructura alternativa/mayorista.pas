@@ -11,7 +11,35 @@ Begin
 	sobrante:= 0;
 	write('Ingrese la cantidad de huevos: ');readln(cantidad);
 	
-	If(cantidad <= 12) then
+	Case cantidad of
+		1..12: precio:= cantidad * 5;
+		13..22: precio:= cantidad * 3;
+		23..28: precio:= cantidad * 2;
+	end;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{If(cantidad <= 12) then
 	begin
 		precio:= cantidad * 5;
 		
@@ -30,9 +58,10 @@ Begin
 				
 			end
 			Else
-				precio:= cantidad;	
+				precio:= cantidad;	}
 				
 				
+	
 			
 				
 	{If (sobrante <= 10) then
