@@ -14,23 +14,23 @@ Var
 	monto:real;
 	equipo,vip:char;
 Begin
-	writeln('ingrese la cantidad de clases : ');readln(clases);
+	write('ingrese la cantidad de clases : ');readln(clases);
+	write('Tiene equipo propio? S / N : ');readln(equipo);
+	write('Es cliente VIP? S / N : ');readln(vip);
+
 	If(clases <= 5) then
-		monto:=clases * 30;
-		
-	If(clases > 5) and (clases <= 12) then
-		monto:= clases * 25;
-		
-	If(clases > 12) then
-		monto:= clases * 18;
-		
-	writeln('Tiene equipo propio? S / N : ');readln(equipo);
+		monto:= clases * 30
+	Else	
+		If(clases <= 12) then
+			monto:= clases * 25
+		Else
+			monto:= clases * 18;
+			
 	If(equipo = 'N') then
 		monto:= monto + 5;
 
-	writeln('Es cliente VIP? S / N :');readln(vip);
 	If(vip = 'S') then
 		monto:= monto * 0.85;
 		
-	writeln('el monto a abonar por las clases es :',monto:2:0);
+	writeln('el monto a abonar por las clases es : $',monto:2:0);
 end.
