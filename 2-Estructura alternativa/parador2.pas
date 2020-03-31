@@ -34,6 +34,6 @@ Begin
 		'S': monto:= monto * 0.85;
 	end;
 	
-	writeln('el monto a abonar por las clases es : $',monto:2:0);
+	writeln('el monto a abonar por las clases es : $',monto:8:2);
 end.
 
