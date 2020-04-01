@@ -25,7 +25,7 @@ Begin
 	ContB:= 0;
 	ContC:= 0;
 	SumA:= 0;
-	velMax:= -9999;
+	velMax:= 20; //Valor minimo de prueba
 	SumV:= 0;
 	write('Ingrese la cantidad de participantes: ');readln(N);
 	For i:= 1 to N do
