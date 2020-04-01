@@ -25,7 +25,7 @@ Begin
 	ContB:= 0;
 	ContC:= 0;
 	SumA:= 0;
-	velMax:= 20; //Valor minimo de prueba
+	velMax:= -9999; //Valor minimo de prueba
 	SumV:= 0;
 	write('Ingrese la cantidad de participantes: ');readln(N);
 	For i:= 1 to N do
@@ -76,5 +76,6 @@ Begin
 	Prom:= SumV/ ContV; // Promedio de las velocidades maximas.
 	writeln('El promedio de velocidades maximas es: ',Prom:2:0);
 	writeln('La cantidad de corredores de categoria A con nivel de riesgo 1 son: ',Cont);
+	writeln('El numero maximo es: ',ContV);
 		
 end.

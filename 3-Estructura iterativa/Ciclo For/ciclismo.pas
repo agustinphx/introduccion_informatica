@@ -68,8 +68,5 @@ Begin
 	writeln('La cantidad de participantes en la categoria A son: ',ContA);
 	writeln('La cantidad de participantes en la categoria B son: ',ContB);
 	writeln('La cantidad de participantes en la categoria C son: ',ContC);
-	writeln('El porcentaje de participantes con nivel de riesgo 3 es: ',PorcTres:2:0,' %');	
-	
-	
-	
+	writeln('El porcentaje de participantes con nivel de riesgo 3 es: ',PorcTres:2:0,' %');
 end.
