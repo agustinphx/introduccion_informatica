@@ -5,14 +5,16 @@
 //especial y $3 por Kg para categoría aérea. Se cobra recargo por sobrepeso: 30% si
 //sobrepasa los 15 Kg, 20% si pesa más de 10 Kg y hasta 15Kg inclusive, 10% más de 5Kg
 //y hasta 10 Kg inclusive.
+
+// DATOS DE ENTRADA : Peso: 8 ,categoria 2 / Peso: 17 , categoria 3 .
+// DATOS DE SALIDA: $22 /  $66.30
 Program envios;
 Var
-	peso:longint;
 	categoria:char;
-	precio:real;
+	peso,precio:real;
 Begin
-	Write('Ingrese el peso del envio : ');readln(peso);
-	Write('Ingrese la categoria : 1- Comun / 2- Especial / 3- aereo ');readln(categoria);
+	write('Ingrese el peso del envio : ');readln(peso);
+	write('Ingrese la categoria : 1- Comun / 2- Especial / 3- Aerea : ');readln(categoria);
 
 	If (categoria = '1') then
 		precio:= peso * 2
@@ -29,6 +31,6 @@ Begin
 			precio:= precio * 1.20
 		Else 
 			precio:=  precio *1.30;
-
-	Write('El monto que debe abonar por su envio es : ',precio:2:0);
+	writeln(' ');
+	write('El monto que debe abonar por su envio es: $',precio:8:2);
 end.
