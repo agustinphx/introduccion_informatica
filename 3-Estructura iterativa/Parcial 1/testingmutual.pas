@@ -1,26 +1,27 @@
 Program testing;
 Var
 	arch:text;
-	i,n,mutual:byte;
+	i,N,mutual:byte;
 	matricula:string[5];
-	espacio, turno: char;
+	espacio,turno: char;
 	X:real;
 
 Begin
-	assign(arch,'testing.txt'); reset(arch);
-	readln(arch,n);readln(arch,X);
-	For i:= 1 to n do
+	Assign(arch,'testing.txt'); reset(arch);
+	readln(arch,N);readln(arch,X);
+	For i:= 1 to N do
 	begin
 		read(arch,matricula);
 		writeln(matricula);
 		read(arch, mutual);
 		writeln(mutual);
 		writeln(turno);
-		while mutual <> 0 do
+		while (mutual <> 0) do
 		begin
 			readln(arch, espacio, turno);
 			read(arch, mutual);
-			if mutual = 0 then
+			
+			If mutual = 0 then
 				readln(arch);
 		end;
 	end;
@@ -28,11 +29,8 @@ Begin
 END.
 
 
-
-
-
-
-{Function ImporteConsulta(Matricula:word; Mutual:string; Monto:real):real;
+{
+Function ImporteConsulta(Matricula:word; Mutual:string; Monto:real):real;
 var 
 	PrecioMutual,Recargo,Porcentaje:real;
 begin
@@ -59,7 +57,8 @@ begin
 		PrecioMutual:=Porcentaje;
 	ImporteConsulta:= PrecioMutual;
 	end;
-end;}
+end;
+}
 
 
 

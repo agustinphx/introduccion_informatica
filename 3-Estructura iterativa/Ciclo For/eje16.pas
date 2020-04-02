@@ -23,7 +23,7 @@ Begin
 		If (DisMax < Dis) then //Calcula la distancia maxima.
 		begin	
 			DisMax:= Dis;
-			DniM:= Dni; // Ganador igual a ese dia que obtuvo la maxima distancia.
+			DniM:= Dni; // Dni ganador que obtuvo la maxima distancia.
 		end;
 		
 		If (Dis > 0) then //Acumula y cuenta todas las distancias.

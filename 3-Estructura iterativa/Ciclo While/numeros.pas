@@ -19,7 +19,7 @@ Begin
 
 	While not Eof (arch) do
 	begin
-		readln(arch,num); // Si lo hacia con read aunque estuviera todo en el archivo en la misma linea no me contaba el 0 para el promedio.
+		readln(arch,num); //Primero leemos el archivo para poder verificar las siguientes condiciones:
 		If (num > -2.5) and (num < 30.8) then
 		begin
 			Suma:= Suma + num;
