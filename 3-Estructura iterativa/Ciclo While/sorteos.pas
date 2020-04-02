@@ -1,5 +1,5 @@
 {-En un sorteo de lotería se extraen los numeros 2,5,1,19,3,12,3,13,9,1,7,29,2,8,1,14,37,16. 
-Se pide ingresar los datos de cada uno de los últimos N sorteos e informar:
+Se pide leer de archivo los datos de cada uno de los numeros e informar:
 a) La cantidad de sorteos que han tenido al menos un número impar.
 b) El número par más alto de cada sorteo, indicar cuándo no haya habido }
 Program sorteos;
