@@ -16,6 +16,8 @@ Datos de entrada: dia: 1 , horas: 118 -> Salida: Es gratis,  Precio: $0
 Datos de entrada: dia: 23 , horas: 36 -> Salida:  Precio: $49.50
 Datos de entrada: dia: 4 , horas: 72 -> Salida: Es gratis, Precio: $0
 Datos de entrada: dia: 5 , horas: 112 -> Salida: Es gratis, Precio: $0
+Cantidad de autos que pagaron con descuento:2
+Cantidad autos que no pagaron:3
 }
 Program Comercial;
 Var
