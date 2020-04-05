@@ -15,7 +15,7 @@ Var
 Begin
 	Suma:= 0;
 	Cont:= 0;
-	Assign(arch,'numeros.txt');reset(arch);
+	Assign(arch,'numeros.txt');reset(arch);reset(arch);
 	write('Ingrese el valor minimo del intervalo: ');readln(A);
 	write('Ingrese el valor maximo del intervalo: ');readln(B);
 	writeln(' ');
