@@ -8,7 +8,15 @@ $ 100 < Monto gratis si día 1..5, otros días $ 8 de descuento
 informar:
  Total de autos que no pagaron
  Total de autos que pagaron con descuento
-2.2-Proponer un ejemplo cuyo resultado sea 2 autos con descuento y 3 autos no pagaron.}
+2.2-Proponer un ejemplo cuyo resultado sea 2 autos con descuento y 3 autos no pagaron.
+Ejemplo:
+N = 5
+Datos de entrada: dia: 7 , horas: 96 -> Salida:  Precio: $136
+Datos de entrada: dia: 1 , horas: 118 -> Salida: Es gratis,  Precio: $0
+Datos de entrada: dia: 23 , horas: 36 -> Salida:  Precio: $49.50
+Datos de entrada: dia: 4 , horas: 72 -> Salida: Es gratis, Precio: $0
+Datos de entrada: dia: 5 , horas: 112 -> Salida: Es gratis, Precio: $0
+}
 Program Comercial;
 Var
 	hs,dia:byte;
@@ -53,9 +61,10 @@ Begin
 						Monto:= Monto;
 						Cont:= Cont + 1; //Cuenta los clientes sin descuento.	
 					end;
-		writeln('El precio a abonar es: $',Monto:2:2); //Añadí esta linea de código para verificar que este calculando bien el precio.
+		writeln('El precio a abonar es: $',Monto:2:2); //Añadí esta linea de código para verificar que este calculando bien el precio de c/u.
 		writeln(' ');
 	end;
-	writeln('La cantidad de autos que no pagaron son: ',Cont);
 	writeln('La cantidad de autos que pagaron con descuento son: ',ContDto);
+	writeln('La cantidad de autos que no pagaron son: ',Cont);
+
 end.
