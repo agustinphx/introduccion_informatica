@@ -26,7 +26,7 @@ Begin
 		end;
 	end;
 	close(arch);
-END.
+end.
 
 
 {

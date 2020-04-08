@@ -22,16 +22,13 @@ Begin
 	begin
 		precio:= precio + (sobrante DIV 10) * 3;
 		sobrante:= sobrante MOD 10;
-	end
-	Else
-		if (sobrante >= 5) then
-		begin	
-			precio:= precio + (sobrante DIV 5) * 2;
-			sobrante:= sobrante MOD 5; 
-		end
-		Else
-			precio:= precio + sobrante;		
-	
+	end;
+	If (sobrante >= 5) then
+	begin	
+		precio:= precio + (sobrante DIV 5) * 2;
+		sobrante:= sobrante MOD 5; 
+	end;
+	precio:= precio + sobrante;		
 	writeln('El precio es: $',precio:2:0);	
 end.			
 //Segunda forma(menos eficiente).			
