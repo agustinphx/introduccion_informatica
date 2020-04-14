@@ -16,7 +16,7 @@ Las millas por viaje se otorgan de la siguiente manera:
  1000 si es de cabotaje y 5000 si es internacional.
  Se triplica si es 1primera clase y se duplica si es business .
 Desarrollar y utilizar en la solución una función Millas con los parámetros que
-considere necesarios para calcular las millas obtenidas en un viaje}
+considere necesarios para calcular las millas obtenidas.}
 Program millas;
 
 {Function Millas(AcuM:integer):integer; //Hay que revisar la funcion porque no lee el valor final de Millas.

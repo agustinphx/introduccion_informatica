@@ -61,8 +61,8 @@ Begin
 	end;
 	close(arch);
 	writeln(' ');		
-	writeln('El porcentaje de alumnos que aprobaron es: ',Porc:6:2,' %');
-	writeln('La cantidad de alumnos que desaprobaron por tener mas de un TP desaprobado son: ',DesaprobadosPorTP);
+	writeln('Alumnos aprobados: ',Porc:6:2,' %');
+	writeln('Alumnos que desaprobaron por tener mas de un TP desaprobado: ',DesaprobadosPorTP);
 	writeln(MejorAlumno,'obtuvo el mejor promedio con un: ',MejorPromedio:6:2);
 end.
 
