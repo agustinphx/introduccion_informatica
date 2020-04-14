@@ -11,13 +11,13 @@ Var
 	Prom,MejorProm:Real;
 	Arch:text;
 begin
-	MejorProm:= 0;
+	MejorProm:= 0; //Debemos inicializar esta fuera del ciclo para calcular bien el mejor promedio.
 	Assign(Arch,'Alumnos.txt');reset(Arch);
 	readln(Arch,N);
 	While not Eof (Arch) do
 	begin
-		NotaTotal:= 0;
-		ContN:= 0;
+		NotaTotal:= 0;// Debe ser inicializada dentro del ciclo para sumar todas las notas correctamente.
+		ContN:= 0; //Si no lo inicializamos dentro del ciclo entonces no va contar bien las notas de cada alumno.
 		read(Arch,Alumno);
 		For i := 1 to N do 
 		begin
