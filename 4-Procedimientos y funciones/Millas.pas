@@ -19,7 +19,7 @@ Desarrollar y utilizar en la solución una función Millas con los parámetros q
 considere necesarios para calcular las millas obtenidas en un viaje}
 Program millas;
 
-Function Millas(AcuM:integer):integer;
+{Function Millas(AcuM:integer):integer; //Hay que revisar la funcion porque no lee el valor final de Millas.
 Var //Variables locales.
 	Ac:integer;
 	Des,Clas:char;
@@ -36,7 +36,7 @@ begin
 	end;
 	
 	Millas:= Ac;
-end;
+end;}
 
 
 Var //Variables globales
@@ -90,7 +90,7 @@ begin
 	writeln('El total general de viajes por clase business son: ',CantB);
 	writeln('El total general de viajes por  clase turista son: ',CanT);
 	
-	writeln('Cantidad de millas actualizadas: ',Millas(AcuM));
+	//writeln('Cantidad de millas actualizadas: ',Millas(AcuM)); 
 
 end.
 
