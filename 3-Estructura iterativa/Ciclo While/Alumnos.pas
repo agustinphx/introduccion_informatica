@@ -5,13 +5,13 @@ a- El nombre y promedio de cada uno de los N alumnos
 b- Nombre del alumno con el mejor promedio.}
 Program alumnos;
 Var
-	Alumno,MejorAlumno:string[10];
+	Alumno,MaxA:string[10];
 	Nota,NotaTotal:byte;
 	i,N,ContN:word;
-	Prom,MejorProm:Real;
+	Prom,Max:Real;
 	Arch:text;
 begin
-	MejorProm:= 0; //Debemos inicializar esta fuera del ciclo para calcular bien el mejor promedio.
+	Max:= 0; //Debemos inicializar esta fuera del ciclo para calcular bien el mejor promedio.
 	Assign(Arch,'Alumnos.txt');reset(Arch);
 	readln(Arch,N);
 	While not Eof (Arch) do
@@ -33,13 +33,13 @@ begin
 		end;	
 		Prom:= NotaTotal / ContN; //Calcula el promedio.
 		
-		If (Prom > MejorProm) then
+		If (Prom > Max) then //Calcula el mejor promedio y nombre del alumno.
 		begin
-			MejorProm:= Prom;
-			MejorAlumno:= Alumno;
+			Max:= Prom;
+			MaxA:= Alumno;
 		end;
 		writeln(Alumno,' promedio: ',Prom:2:2);
 	end;
 	close(Arch);
-	writeln('El mejor promedio fue: ',MejorProm:2:2,' del alumno: ',MejorAlumno);
+	writeln('El mejor promedio fue: ',Max:2:2,' del alumno: ',MaxA);
 end.
