@@ -7,7 +7,7 @@ Program alumnos;
 Var
 	Alumno,MejorAlumno:string[10];
 	Nota,NotaTotal:byte;
-	i,N:word;
+	i,N,ContN:word;
 	Prom,MejorProm:Real;
 	Arch:text;
 begin
@@ -17,6 +17,7 @@ begin
 	While not Eof (Arch) do
 	begin
 		NotaTotal:= 0;
+		ContN:= 0;
 		read(Arch,Alumno);
 		For i := 1 to N do 
 		begin
@@ -25,9 +26,12 @@ begin
 			Else
 				readln(Arch,Nota);
 				
-			NotaTotal:= NotaTotal + Nota; //Suma todas las notas.
-		end;
-		Prom:= NotaTotal / N; //Calcula el promedio.
+			If (Nota > 0) then //Cuenta
+				ContN:= ContN + 1;
+		
+			NotaTotal:= NotaTotal + Nota; 
+		end;	
+		Prom:= NotaTotal / ContN; //Calcula el promedio.
 		
 		If (Prom > MejorProm) then
 		begin
