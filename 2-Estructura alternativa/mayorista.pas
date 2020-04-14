@@ -31,6 +31,8 @@ Begin
 	precio:= precio + sobrante;		
 	writeln('El precio es: $',precio:2:0);	
 end.			
+
+
 //Segunda forma(menos eficiente).			
 	{If (sobrante >= 10) then // Los proximos paquetes de a 10 valen $3
 	begin	

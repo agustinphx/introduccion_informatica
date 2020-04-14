@@ -6,8 +6,9 @@ Var
 	i,N,Cont,Min:word;
 Begin
 	Cont:= 0; 
-	Min:= 999; //Valor random para calcular el minimo.
+	Min:= 0; //Valor random para calcular el minimo.
 	write('Ingrese la cantidad de numeros: ');readln(N);
+	write('Ingrese un primer numero: ');readln(Min);
 	For i:= 1 to N do
 	begin	
 		write('Ingrese un numero: ');readln(Num);

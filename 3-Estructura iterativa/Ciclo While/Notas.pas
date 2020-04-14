@@ -12,34 +12,58 @@ desaprobado. (aún teniendo promedio>=4).
 c) Nombre del alumno con mejor promedio.}
 Program materias;
 Var
-	Num:byte; 
-	Nom:string[10];
-	i,N,Cont,Acum:word;
-	Porc:real;
+	Nota,DesaprobadosPorTP,TPDesaprobados,Aprobados,TotalAlumnos,NotaTotal:byte; 
+	Alumno,MejorAlumno:string[10];
+	i,N:word;
+	Prom,MejorPromedio,Porc:real;
 	arch:text;
 Begin
-	Cont:= 0;
-	Acum:= 0;
+	Aprobados:= 0;
+	DesaprobadosPorTP:= 0;
+	TotalAlumnos:= 0;
+	MejorPromedio:= 0;
+	
 	Assign(arch,'Notas.txt');reset(arch);
 	readln(arch,N);	
 	While not eof (arch) do
 	begin	
+		NotaTotal:= 0;
+		TPDesaprobados:= 0;
+		read(arch,Alumno);
 		For i:= 1 to N do
 		begin
-			read(arch,Nom);
-			readln(arch,Num); //Hay que arreglar la lectura a partir de la segunda linea			
-			If (Num > 5) then
-			begin	
-				writeln(Nom);
-				writeln(Num);
-				Acum:= Acum + Num;
-				Cont:= Cont + 1;
-			end;
+			If (i <> N) then
+				read(arch,Nota)
+			Else
+				readln(arch,Nota);
+				
+			If (Nota < 4) then // Si la nota es menor a 4 el trabajo practico esta desaprobado.
+				TPDesaprobados:= TPDesaprobados + 1;
+				
+			NotaTotal:= NotaTotal + Nota; //Sumamos las notas para luego calcular el promedio.
 		end;
+		Prom:= NotaTotal / N;
+		
+		If (Prom >= 4) and (TPDesaprobados <= 1) then //Evaluamos si el alumno esta aprobado.
+			Aprobados:= Aprobados + 1;
+			
+		If (TPDesaprobados > 1) then //Evaluamos si el alumno desaprobo por tener un tener mas de un tp desaprobado.
+			DesaprobadosPorTP:= DesaprobadosPorTP + 1;
+			
+		If (Prom > MejorPromedio) then
+		begin
+			MejorPromedio:= Prom;
+			MejorAlumno:= Alumno;
+		end;
+		
+		TotalAlumnos:= TotalAlumnos + 1; //Cuenta la cantidad total de alumnos antes de terminar de recorrer el cilo.
+		Porc:= (Aprobados / TotalAlumnos) * 100; //Calcula el porcentaje de aprobados.
 	end;
 	close(arch);
-	writeln(' ');
-	writeln('La nota acumulada es : ',Acum);
+	writeln(' ');		
+	writeln('El porcentaje de alumnos que aprobaron es: ',Porc:6:2,' %');
+	writeln('La cantidad de alumnos que desaprobaron por tener mas de un TP desaprobado son: ',DesaprobadosPorTP);
+	writeln(MejorAlumno,'obtuvo el mejor promedio con un: ',MejorPromedio:6:2);
 end.
 
 
