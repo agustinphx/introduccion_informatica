@@ -16,58 +16,66 @@ Desarrollar y utilizar en la solución una función Millas con los parámetros q
 considere necesarios para calcular las millas obtenidas.}
 Program millas;
 
-Function Millas(mllas:integer; destino,clase:char):Longint;
+Function Millas(ms:integer; ds,cl:char):longint;
+Var
+	aux:integer;
 begin
-		Case destino of
-			'I': mllas:= mllas + 5000;
-			'C': mllas:= mllas + 1000;
+	aux:= 0;
+		Case ds of
+			'I': ms:= ms + 5000;
+			'C': ms:= ms + 1000;
 		end;	
-			
-		If (clase = 'P') then
-			mllas:= mllas * 3
-		Else
-			if (clase = 'B') then
-				mllas:= mllas * 2;
-	Millas:= mllas;
+	
+		Case  cl of
+			'P': ms:= ms * 3;
+			'B': ms:= ms * 2;
+		end;
+							
+	Millas:= ms;
 end;
 
 Var 
 	Dni:string[13]; 
 	Mllas:integer;
-	CantVI,CantP,CantB,CanT:word; 
+	Acum,i,N,CantVI,CantP,CantB,CanT:word; 
 	Des,Clas:char;
 Begin
-	CantVI:= 0;
-	CantP:= 0;
-	CantB:= 0;
-	CanT:= 0;
+
 	write('Ingrese el dni del pasajero: ');readln(Dni);
 	while (Dni <> '***') do
 	begin
+		CantVI:= 0;
+		CantP:= 0; 
+		CantB:= 0;
+		CanT:= 0;
+		Acum:= 0;
 		write('Cuantas millas acumuladas tiene? ');readln(Mllas);
-		write('Cual fue su destino de uno de los viajes? C- Cabotaje / I- Internacional: ');readln(Des);
-		write('En que clase viajo? P- Primera / B- Business / T- Turista: ');readln(Clas);
-		writeln;
-			If (Des = 'I') then 
+		write('Cuantos viajes realizo en el ultimo anio? : ');readln(N);
+		For i:= 1 to N do
+		begin
+			write('Cual fue su destino de uno de los viajes? C- Cabotaje / I- Internacional: ');readln(Des);
+			write('En que clase viajo? P- Primera / B- Business / T- Turista: ');readln(Clas);
+			writeln;
+			If (Des = 'I') then //Cuenta los viajes internacionales
 				CantVI:= CantVI + 1;
-				
-			If (Clas = 'P') then
+					
+			If (Clas = 'P') then //Cuenta los viajes en Primera clase
 				CantP:= CantP + 1
 			Else
-				if (Clas = 'B') then
+				if (Clas = 'B') then //Cuenta los viajes en clase Business
 					CantB:= CantB + 1
 				Else
-					CanT:= CanT + 1;			
-		writeln('El pasajero con Dni: ',Dni,' tiene sus millas actualizadas a: ',Millas(Mllas,Des,Clas));
+					CanT:= CanT + 1; //Cuenta los viajes en clase Turista.	
+		end;	
+		writeln('a- El pasajero con Dni: ',Dni,' tiene sus millas actualizadas a: ',Millas(Mllas,Des,Clas),' y realizo: ',CantVI,' viajes internacionales');
 		writeln;
-		write('Si desea finalizar  escriba *** en lugar del dni');
-		writeln;
-		write('Ingrese el dni: ');readln(Dni);
+		writeln('Si desea finalizar  escriba *** en lugar del dni');
+		write('Ingrese el dni: ');
 	end;
 	writeln;		
-	writeln('El total general de viajes por primera clase son: ',CantP);
-	writeln('El total general de viajes por clase business son: ',CantB);
-	writeln('El total general de viajes por  clase turista son: ',CanT);
+	writeln('c- El total general de viajes por primera clase son: ',CantP);
+	writeln('c- El total general de viajes por clase business son: ',CantB);
+	writeln('c- El total general de viajes por clase turista son: ',CanT);
 	
 end.
 

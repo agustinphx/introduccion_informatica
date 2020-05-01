@@ -12,27 +12,15 @@ determine en qué zona cayó. (Distancia=Sqrt( Sqr(X-X0)+Sqr(Y-Y0)) )}
 Program arqueria;
 
 Function EnZona(x,y:byte):real;
-Var
-	zon:real;
 begin
-	zon:= sqrt( sqr(0 - x) + sqr(0 - y));
-
-		If (zon <= 5) then
-			write('El disparo cayo en el radio de A')
-		Else
-			if (zon <= 12) then
-				write('El disparo cayo en el radio de B ')
-			Else
-				write('El disparo cayo en el radio de C');
-				
-	EnZona:= zon;	
+	EnZona:= sqrt( sqr(0 - x) + sqr(0 - y));
 end;
 
 Var
 	Nom:string[10];
 	x,y:byte;
 	i,N,Cont,ContA,ContB,ContC,ContMax:word;
-	PorcA,PorcB,PorC:real;
+	PorcA,PorcB,PorC,zon:real;
 Begin
 	ContMax:= 0;
 	Cont:= 0;
@@ -66,6 +54,17 @@ Begin
 				if (y <= 5) then
 					ContMax:= ContMax + 1;
 					
+		zon:= EnZona(x,y);
+		
+		If (zon <= 5) then
+			write('El disparo cayo en el radio de A')
+		Else
+			if (zon <= 12) then
+				write('El disparo cayo en el radio de B ')
+			Else
+				write('El disparo cayo en el radio de C');
+		
+		writeln;
 		Cont:= ContA + ContB + ContC;
 		PorcA:= (ContA  / Cont) * 100;
 		PorcB:= (ContB / Cont) * 100;
@@ -75,6 +74,5 @@ Begin
 		writeln('Si desea finalizar escriba *** en lugar del nombre');
 		write('Ingrese el nombre del arquero: ');readln(Nom);
 	end;
-	writeln('La cantidad de participantes que dieron en la zona A mas  cercana del blanco son: ',ContMax);
-	writeln('b- ',EnZona(x,y):2:0,' es la distancia del impacto al centro');
+	writeln('b- La cantidad de participantes que dieron en la zona A mas  cercana del blanco son: ',ContMax);
 end.
