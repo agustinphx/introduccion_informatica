@@ -31,7 +31,7 @@ Begin
 			Acum:= Acum + Dis;
 			Cont:= Cont + 1;
 		end;
-		writeln(' ');
+		writeln;
 	end;
 	Media:= Acum / Cont; //Calcula la media entre todas las distancias.
 	writeln('El dni ganador es: ',DniM,' y su distancia fue: ',DisMax:4:2);

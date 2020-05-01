@@ -21,15 +21,15 @@ begin
 		read(Arch,Alumno);
 		For i := 1 to N do 
 		begin
-			If (i <> N) then
-				read(Arch,Nota) // Para que me lea todas las notas todas tienen que tener al menos N = 4,osea, 4 notas por cada alumno, sino da error 106 de lectura de archivo.
+			If (i <> N) then // Para que me lea todas las notas la variable inicial i debe ser <> N,asi es como, me lee 4 notas por cada alumno, sino da error 106 de lectura de archivo.
+				read(Arch,Nota) 
 			Else
-				readln(Arch,Nota);
+				readln(Arch,Nota); //Cuando termina de leer las 4 notas de cada alumno, salta de linea para leer las 4 notas del siguiente alumno.
 				
 			If (Nota > 0) then //Cuenta
 				ContN:= ContN + 1;
 		
-			NotaTotal:= NotaTotal + Nota; 
+			NotaTotal:= NotaTotal + Nota; //Conteo de todas las notas de cada alumno.
 		end;	
 		Prom:= NotaTotal / ContN; //Calcula el promedio.
 		

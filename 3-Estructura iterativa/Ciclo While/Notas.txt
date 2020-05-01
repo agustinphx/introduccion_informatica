@@ -1,6 +1,21 @@
 3
-Miguel    4 8 9      
-Antonio   2 3 1                
-Martin    7 3 2               
-Daniela   1 5 5                  
-Alejandra 5 2 6                
+Miguel    
+4 
+8 
+9      
+Antonio   
+2 
+3 
+1                
+Martin    
+7 
+3 
+2               
+Daniela   
+1 
+5 
+5                  
+Alejandra 
+5 
+2 
+6

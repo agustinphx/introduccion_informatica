@@ -22,7 +22,56 @@ Begin
 	DesaprobadosPorTP:= 0;
 	TotalAlumnos:= 0;
 	MejorPromedio:= 0;
-	
+	Assign(arch,'Notas.txt');reset(arch);
+	readln(arch,N);	
+	While not eof (arch) do
+	begin	
+		NotaTotal:= 0;
+		TPDesaprobados:= 0;
+		readln(arch,Alumno);
+		
+		For i:= 1 to N do
+		begin
+			If (i <> N) then
+				read(arch,Nota)
+			Else
+				readln(arch,Nota);
+				
+			If (Nota < 4) then											 // Si la nota es menor a 4 el trabajo practico esta desaprobado.
+				TPDesaprobados:= TPDesaprobados + 1;
+				
+			NotaTotal:= NotaTotal + Nota;								 //Sumamos las notas para luego calcular el promedio.
+		end;
+		Prom:= NotaTotal / N;
+		
+		If (Prom >= 4) and (TPDesaprobados <= 1) then 					//Evaluamos si el alumno esta aprobado.
+			Aprobados:= Aprobados + 1
+		Else	
+			If (Prom >= 4) and (TPDesaprobados > 1) then	 			//Evaluamos si el alumno desaprobo por tener un tener mas de un tp desaprobado.
+				DesaprobadosPorTP:= DesaprobadosPorTP + 1;
+			
+		If (Prom > MejorPromedio) then
+		begin
+			MejorPromedio:= Prom;
+			MejorAlumno:= Alumno;
+		end;
+		TotalAlumnos:= TotalAlumnos + 1;					 //Cuenta la cantidad total de alumnos antes de terminar de recorrer el cilo.
+		Porc:= (Aprobados / TotalAlumnos) * 100;				 //Calcula el porcentaje de aprobados.
+	end;
+	close(arch);
+	writeln;		
+	writeln('Alumnos aprobados: ',Porc:6:2,' %');
+	writeln('Alumnos que desaprobaron por tener mas de un TP desaprobado: ',DesaprobadosPorTP);
+	writeln(MejorAlumno,'obtuvo el mejor promedio con un: ',MejorPromedio:6:2);
+end.
+
+
+
+{Begin
+	Aprobados:= 0;
+	DesaprobadosPorTP:= 0;
+	TotalAlumnos:= 0;
+	MejorPromedio:= 0;
 	Assign(arch,'Notas.txt');reset(arch);
 	readln(arch,N);	
 	While not eof (arch) do
@@ -37,18 +86,18 @@ Begin
 			Else
 				readln(arch,Nota);
 				
-			If (Nota < 4) then // Si la nota es menor a 4 el trabajo practico esta desaprobado.
+			If (Nota < 4) then											 // Si la nota es menor a 4 el trabajo practico esta desaprobado.
 				TPDesaprobados:= TPDesaprobados + 1;
 				
-			NotaTotal:= NotaTotal + Nota; //Sumamos las notas para luego calcular el promedio.
+			NotaTotal:= NotaTotal + Nota;								 //Sumamos las notas para luego calcular el promedio.
 		end;
 		Prom:= NotaTotal / N;
 		
-		If (Prom >= 4) and (TPDesaprobados <= 1) then //Evaluamos si el alumno esta aprobado.
-			Aprobados:= Aprobados + 1;
-			
-		If (TPDesaprobados > 1) then //Evaluamos si el alumno desaprobo por tener un tener mas de un tp desaprobado.
-			DesaprobadosPorTP:= DesaprobadosPorTP + 1;
+		If (Prom >= 4) and (TPDesaprobados <= 1) then 					//Evaluamos si el alumno esta aprobado.
+			Aprobados:= Aprobados + 1
+		Else	
+			If (Prom >= 4) and (TPDesaprobados > 1) then	 			//Evaluamos si el alumno desaprobo por tener un tener mas de un tp desaprobado.
+				DesaprobadosPorTP:= DesaprobadosPorTP + 1;
 			
 		If (Prom > MejorPromedio) then
 		begin
@@ -56,14 +105,14 @@ Begin
 			MejorAlumno:= Alumno;
 		end;
 		
-		TotalAlumnos:= TotalAlumnos + 1; //Cuenta la cantidad total de alumnos antes de terminar de recorrer el cilo.
-		Porc:= (Aprobados / TotalAlumnos) * 100; //Calcula el porcentaje de aprobados.
+		TotalAlumnos:= TotalAlumnos + 1;					 //Cuenta la cantidad total de alumnos antes de terminar de recorrer el cilo.
+		Porc:= (Aprobados / TotalAlumnos) * 100;				 //Calcula el porcentaje de aprobados.
 	end;
 	close(arch);
-	writeln(' ');		
+	writeln;		
 	writeln('Alumnos aprobados: ',Porc:6:2,' %');
 	writeln('Alumnos que desaprobaron por tener mas de un TP desaprobado: ',DesaprobadosPorTP);
 	writeln(MejorAlumno,'obtuvo el mejor promedio con un: ',MejorPromedio:6:2);
-end.
+end.}
 
 

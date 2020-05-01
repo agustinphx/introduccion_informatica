@@ -7,7 +7,7 @@ Además:
 Si el área a fumigar es mayor que 100 has. se aplica un 5% de descuento.
 Si el importe total supera los $1.500 se aplica un 10% de descuento, sobre la cantidad
 que excede los $ 1.500. Desarrollar un algoritmo que lea las triplas:
-NOMBRE(fin de datos = '***') , TIPO (1-4) , CANTIDAD (has.)
+NOMBRE, TIPO (1-4) , CANTIDAD (has.)
 y calcule e imprima los datos leídos y el costo del trabajo.}
 Program fumigadora;
 Var

@@ -10,7 +10,7 @@ var
      peso, sobrepeso: byte;
         // Cantidad de pasajeros podría ser una cantidad que sobre pase el límite del byte,
         // de la misma manera lo podrían hacer los sobrepesos de A, B, C y en consecuencia también el Total
-        // El auxiliar I tiene que estar en la magnitud del valor que puede llegar a tomar -> Cantidad de Pasajeros
+        // El auxiliar i tiene que estar en la magnitud del valor que puede llegar a tomar -> Cantidad de Pasajeros
      i, cantidadDePasajeros, sobrepesoA, sobrepesoB, sobrepesoC, sobrepesoTotal, mayorSobrepeso: word;
 
 function calcularSobrepeso (categoria:char;peso:byte):byte;

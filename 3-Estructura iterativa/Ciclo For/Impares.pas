@@ -6,21 +6,21 @@ Var
 	i,N,Cont,Min:word;
 Begin
 	Cont:= 0; 
-	Min:= 0; //Valor random para calcular el minimo.
+	Min:= 999;
 	write('Ingrese la cantidad de numeros: ');readln(N);
-	write('Ingrese un primer numero: ');readln(Min);
 	For i:= 1 to N do
 	begin	
 		write('Ingrese un numero: ');readln(Num);
 		
-		If (Num < Min) and (Num MOD 2 <> 0) then //Calcula el minimo de los impares ingresados.
+		If (Num < Min) and (Num MOD 2 <> 0) then				 //Calcula el minimo de los impares ingresados.
 			Min:= Num;
-		
-		If (Num MOD 2 <> 0) then //Cuenta la cantidad de impares.
-			Cont:= Cont + 1;
+			
+		If (Num MOD 2 <> 0) and (Num = Min) then				 //Cuenta la cantidad de impares.
+				Cont:= Cont + 1;
 	end;
-	writeln('La cantidad de impares es: ',Cont);
+	writeln;
 	writeln('El minimo de los impares es: ',Min);
+	writeln('La cantidad de veces que se repite son: ',Cont);
 end.
 
 	

@@ -10,12 +10,9 @@ Leer código, altura y distancia correspondiente a N jinetes e informe para cada
 correspondiente clasificación y el código de jinete del salto mas alto.
 Proponga un juego de datos con N= 6.}
 Program jinetes;
-
-Function Salto(Alt,Dis,Cod:real):real;
 Var
-	
 	i,N:word;
-	Max,CodMax,Codigo:real;
+	Max,CodMax,Alt,Dis,Codigo:real;
 begin
 	Max:= 0;
 	write('Ingrese la cantidad de jinetes: ');readln(N);
@@ -37,10 +34,10 @@ begin
 				writeln('El salto es malo');
 		
 		If (CodMax < Alt) then //Calcula el codigo del salto mas alto en base a la altura.
-			CodMax:= Cod;
+			CodMax:= Codigo;
 			
 		If (CodMax < Dis) then //Calcula el codigo del salto mas alto en base a la distancia.
-			CodMax:= Cod;
+			CodMax:= Codigo;
 			
 		If (Alt > Max) then //Calcula el salto mas alto en base a la altura.
 			Max:= Alt;
@@ -50,11 +47,4 @@ begin
 	end;
 	writeln;
 	writeln('El salto mas alto es fue de: ',Max:2:0,' con el codigo: ',CodMax:2:2);
-end;
-
-Var
-	Alt,Dis,Cod:real;
-	
-Begin
-	Salto(Alt,Dis,Cod);
 end.
