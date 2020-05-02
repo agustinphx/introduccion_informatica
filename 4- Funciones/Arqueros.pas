@@ -19,11 +19,10 @@ end;
 Var
 	Nom:string[10];
 	x,y:byte;
-	i,N,Cont,ContA,ContB,ContC,ContMax:word;
+	i,N,ContA,ContB,ContC,ContMax:word;
 	PorcA,PorcB,PorC,zon:real;
 Begin
 	ContMax:= 0;
-	Cont:= 0;
 	write('Ingrese el nombre del arquero: ');readln(Nom);
 	While (Nom <> '***') do
 	begin
@@ -35,40 +34,37 @@ Begin
 		begin
 			write('Ingrese la coordenada x del lanzamiento: ');readln(x);
 			write('Ingrese la coordenada y del lanzamiento: ');readln(y);
-			Case x of
-				 1..5:ContA:= ContA + 1;
-				6..12:ContB:= ContB + 1;
-			  13..100:ContC:= ContC + 1;
-			end;
-
-			Case y of
-				 1..5:ContA:= ContA + 1;
-				6..12:ContB:= ContB + 1;
-			  13..100:ContC:= ContC + 1;
-			end;	
-		end;
-		
-		If (x <= 5) then
-				ContMax:= ContMax + 1
-			Else
-				if (y <= 5) then
-					ContMax:= ContMax + 1;
 					
-		zon:= EnZona(x,y);
-		
-		If (zon <= 5) then
-			write('El disparo cayo en el radio de A')
-		Else
-			if (zon <= 12) then
-				write('El disparo cayo en el radio de B ')
+			zon:= EnZona(x,y);
+			
+			If (zon <= 5) then
+			begin
+				writeln('El disparo cayo en el radio de A');
+				ContA:= ContA + 1;
+			end
 			Else
-				write('El disparo cayo en el radio de C');
-		
+				if (zon <= 12) then
+				begin
+					writeln('El disparo cayo en el radio de B ');
+					ContB:= ContB + 1;
+				end
+				Else
+				begin
+					writeln('El disparo cayo en el radio de C');
+					ContC:= ContC + 1;
+				end;
+				writeln;
+			end;
+			
+			If (x <= 5) then
+					ContMax:= ContMax + 1
+				Else
+					if (y <= 5) then
+						ContMax:= ContMax + 1;
 		writeln;
-		Cont:= ContA + ContB + ContC;
-		PorcA:= (ContA  / Cont) * 100;
-		PorcB:= (ContB / Cont) * 100;
-		PorC:= (ContC / Cont) * 100;
+		PorcA:= (ContA  / N) * 100;
+		PorcB:= (ContB / N) * 100;
+		PorC:= (ContC / N) * 100;
 		writeln('a- ',Nom,' tuvo un porcentaje de acierto en los blancos A: ',PorcA:2:0,' %   B: ',PorcB:2:0,' %   C: ',PorC:2:0,' %');
 		writeln;
 		writeln('Si desea finalizar escriba *** en lugar del nombre');

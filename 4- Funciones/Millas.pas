@@ -16,31 +16,31 @@ Desarrollar y utilizar en la solución una función Millas con los parámetros q
 considere necesarios para calcular las millas obtenidas.}
 Program millas;
 
-Function Millas(ms:integer; ds,cl:char):longint;
-Var
-	aux:integer;
+Function Millas(ms:integer; ds,cl:char):real;
+
 begin
-	aux:= 0;
 		Case ds of
 			'I': ms:= ms + 5000;
 			'C': ms:= ms + 1000;
-		end;	
-	
-		Case  cl of
-			'P': ms:= ms * 3;
-			'B': ms:= ms * 2;
 		end;
-							
+		
+		If (cl = 'P') then
+			ms:= ms + ms * 3
+		Else
+			if (cl = 'B') then
+				ms:= ms + ms * 2;
+									
 	Millas:= ms;
 end;
 
 Var 
 	Dni:string[13]; 
 	Mllas:integer;
-	Acum,i,N,CantVI,CantP,CantB,CanT:word; 
+	i,N,CantVI,CantP,CantB,CanT:word; 
 	Des,Clas:char;
+	Acum:real;
 Begin
-
+	Acum:= 0;
 	write('Ingrese el dni del pasajero: ');readln(Dni);
 	while (Dni <> '***') do
 	begin
@@ -48,7 +48,6 @@ Begin
 		CantP:= 0; 
 		CantB:= 0;
 		CanT:= 0;
-		Acum:= 0;
 		write('Cuantas millas acumuladas tiene? ');readln(Mllas);
 		write('Cuantos viajes realizo en el ultimo anio? : ');readln(N);
 		For i:= 1 to N do
@@ -66,11 +65,13 @@ Begin
 					CantB:= CantB + 1
 				Else
 					CanT:= CanT + 1; //Cuenta los viajes en clase Turista.	
+		Acum:=  Millas(Mllas,Des,Clas);
 		end;	
-		writeln('a- El pasajero con Dni: ',Dni,' tiene sus millas actualizadas a: ',Millas(Mllas,Des,Clas),' y realizo: ',CantVI,' viajes internacionales');
+		writeln('a- El pasajero con Dni: ',Dni,' tiene sus millas actualizadas a: ',Acum:2:0,' y realizo: ',CantVI,' viajes internacionales');
 		writeln;
-		writeln('Si desea finalizar  escriba *** en lugar del dni');
-		write('Ingrese el dni: ');
+		write('Si desea finalizar  escriba *** en lugar del dni');
+		writeln;
+		write('Ingrese el dni: ');readln(Dni);
 	end;
 	writeln;		
 	writeln('c- El total general de viajes por primera clase son: ',CantP);
