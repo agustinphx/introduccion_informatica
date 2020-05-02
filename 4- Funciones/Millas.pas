@@ -25,10 +25,10 @@ begin
 		end;
 		
 		If (cl = 'P') then
-			ms:= ms + ms * 3
+			ms:= ms + (ms * 3)
 		Else
 			if (cl = 'B') then
-				ms:= ms + ms * 2;
+				ms:= ms + (ms * 2);
 									
 	Millas:= ms;
 end;
