@@ -8,7 +8,7 @@ Var
 	num:TVnum;
 	N,M:byte;
 
-Procedure LeerArchivo(var Nombre:TV; var num:TVnum;  var N,M:byte);
+Procedure LeerArchivo(var Nombre:TV; var num:TVnum; var N,M:byte);
 var
 	i,j:byte; 
 	arch:text;
@@ -20,6 +20,7 @@ Begin
 		readln(arch,Nombre[i]);
 		writeln(Nombre[i]);
 	end;
+	
 	For j:= 1 to M do
 	begin
 		readln(arch,num[i]);
