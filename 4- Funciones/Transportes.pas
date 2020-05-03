@@ -40,11 +40,11 @@ end;
 Var
 	i,N:word;
 	Cat:char;
-	Peso,Pr,AcumA,AcumE,AcumC:real;	
+	Peso,Pr,Acum1,Acum2,Acum3:real;	
 Begin
-	AcumC:= 0;
-	AcumE:= 0;
-	AcumA:= 0;
+	Acum1:= 0;
+	Acum2:= 0;
+	Acum3:= 0;
 	Pr:= 0;
 	write('Ingrese la cantidad de bultos: ');readln(N);
 	For i:= 1 to N do
@@ -56,16 +56,16 @@ Begin
 		Pr:= Precio(Peso,Cat);
 		
 		If (Cat = '1') then //Acumulamos segun cada categoria  y luego le sumamos el valor que retorna la funcion para ir acumulando.
-			AcumC:= AcumC + Pr
+			Acum1:= Acum1 + Pr
 		Else
 			if (Cat = '2') then
-				AcumE:= AcumE + Pr
+				Acum2:= Acum2 + Pr
 			Else
-				AcumA:= AcumA + Pr;
+				Acum3:= Acum3 + Pr;
 	end;
-	writeln('El total recaudado por la categoria 1 es: $',AcumC:2:0);
-	writeln('El total recaudado por la categoria 2 es: $',AcumE:2:0);
-	writeln('El total recaudado por la categoria 3 es: $',AcumA:2:0);
+	writeln('El total recaudado por la categoria 1 es: $',Acum1:2:0);
+	writeln('El total recaudado por la categoria 2 es: $',Acum2:2:0);
+	writeln('El total recaudado por la categoria 3 es: $',Acum3:2:0);
 
 
 end.
