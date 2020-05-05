@@ -4,46 +4,51 @@ Se desea conocer:
 a) Para cada Tambo, Nombre y el día que más litros de leche entregó.
 b) Promedio total de leche entregado por Tambo.
 c) Cuántos Tambos superaron los X litros. (X es dato)}
-Program tambos;
+Program Tambos;
+Const
+	X = 750;
 Var
-	Tambo:String[13];
-	Dia:byte;
-	N,Cont,ContM,Acum,MaxDia,X,Litros,MaxLitros:word;
-	Espacio:char;
+	Dia,MaxDia,SumDias,i,N,ContX:byte;
+	Tambo:string[13];
+	Litros,MaxLitros,AcumLitros:word;
 	Prom:real;
 	Arch:text;
-begin
-	MaxDia:= 0;
-	MaxLitros:= 0;
-	assign(Arch,'tambos.txt');reset(Arch);
+Begin
+	Assign(Arch,'Tambos.txt');reset(Arch);
 	readln(Arch,N);
-	While not eof (Arch) do
+	For i:= 1 to N do
 	begin
-		Cont := 0;
-		ContM := 0;
-		Acum:= 0;
-		X:= 750;
+		AcumLitros:= 0;
+		MaxDia:= 0;
+		MaxLitros:= 0;
+		SumDias:= 0;
+		ContX:= 0;
 		readln(Arch,Tambo);
-		read(Arch,Dia,Espacio,Litros);
+		read(Arch,Dia);
 		While (Dia <> 0) do
-		begin
-			read(Arch,Dia,Espacio,Litros);
-			Acum:= Acum + Litros;
-			Cont:= Cont + 1;
-		end;
+		begin	
+			readln(Arch,Litros);
+			AcumLitros:= AcumLitros + Litros;
+	
+			If (Litros > MaxLitros) then
+			begin	
+				MaxLitros:= Litros;
+				MaxDia:= Dia;
+			end;
 			
-		If (Litros > MaxLitros) then
-		begin
-			MaxLitros:= Litros;
-			MaxDia:= Dia;
+			If (AcumLitros > X) then
+				ContX:= ContX + 1;
+				
+			read(Arch,Dia); //Debemos leer dia despues de asignar el maximo dia porque sino el primer tambo mostará dia: 0.
+			SumDias:= SumDias + 1;	
 		end;
-		If (Litros > X) then
-			ContM:= ContM + 1;
-
-	Prom:= Acum / Cont;
+		Prom:= AcumLitros / SumDias;
+			
+		writeln('a- ',Tambo,' entrego ',MaxLitros,' litros el dia: ',MaxDia);
+		writeln('b- ',Tambo,' promedio de leche entregada: ',Prom:2:0,' litros');
+		writeln;
+		readln(Arch);
 	end;
 	Close(Arch);
-	writeln('a- ',Tambo,' dia: ',MaxDia,' entrego: ',MaxLitros,' litros');
-	writeln('b- ',Tambo,' promedio de leche entregada: ',Prom:2:0);
-	writeln('c- Los tambos que superaron: ',X,' litros son: ',ContM);
+	writeln('c- La cantidad de tambos que superaron ',X,' litros son: ',ContX);
 end.
