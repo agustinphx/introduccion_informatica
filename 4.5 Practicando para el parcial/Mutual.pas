@@ -1,5 +1,4 @@
 Program testing;
-
 Function ImporteConsulta(Mutual:byte; Turno:char; Recargo:real):real;
 Var
 	Precio:real;
@@ -50,8 +49,10 @@ Begin
 			Cont:= Cont + 1;
 			
 			If (Acum > Max) then
+			begin
+				Max:= Matricula;
 				writeln('a- Matricula del medico que mas cobro: ',Matricula);
-				
+			end;
 			If (Mutual = 4) then
 				CantP:= CantP + 1;
 				
