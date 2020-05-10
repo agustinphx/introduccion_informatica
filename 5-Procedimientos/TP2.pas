@@ -31,7 +31,7 @@ begin
 		 begin
 			i:= i+1;
 			A[i]:=B;
-		end;
+		end
 		Else
 			if (i=0) then
 			begin
