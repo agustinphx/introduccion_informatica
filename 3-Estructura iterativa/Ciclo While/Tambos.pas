@@ -24,12 +24,13 @@ Begin
 		SumDias:= 0;
 		ContX:= 0;
 		readln(Arch,Tambo);
-		read(Arch,Dia);
+		read(Arch,Dia); //Tengo que dividir la lectura xq sino cuando salta a leer litros va dar error
 		While (Dia <> 0) do
-		begin	
+		begin
 			readln(Arch,Litros);
 			AcumLitros:= AcumLitros + Litros;
-	
+			SumDias:= SumDias + 1;	
+			
 			If (Litros > MaxLitros) then
 			begin	
 				MaxLitros:= Litros;
@@ -39,8 +40,7 @@ Begin
 			If (AcumLitros > X) then
 				ContX:= ContX + 1;
 				
-			read(Arch,Dia); //Debemos leer dia despues de asignar el maximo dia porque sino el primer tambo mostará dia: 0.
-			SumDias:= SumDias + 1;	
+			read(Arch,Dia); //Debemos leerla al final del ciclo para evitar un loop infinito y sobreescribir los datos.
 		end;
 		Prom:= AcumLitros / SumDias;
 			
