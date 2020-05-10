@@ -24,7 +24,7 @@ Begin
 		SumDias:= 0;
 		ContX:= 0;
 		readln(Arch,Tambo);
-		read(Arch,Dia); //Tengo que dividir la lectura xq sino cuando salta a leer litros va dar error
+		read(Arch,Dia); //Tengo que dividir la lectura porque sino cuando salta a leer litros donde el dia es 0  va dar error
 		While (Dia <> 0) do
 		begin
 			readln(Arch,Litros);
@@ -43,7 +43,6 @@ Begin
 			read(Arch,Dia); //Debemos leerla al final del ciclo para evitar un loop infinito y sobreescribir los datos.
 		end;
 		Prom:= AcumLitros / SumDias;
-			
 		writeln('a- ',Tambo,' entrego ',MaxLitros,' litros el dia: ',MaxDia);
 		writeln('b- ',Tambo,' promedio de leche entregada: ',Prom:2:0,' litros');
 		writeln;
