@@ -6,7 +6,7 @@ categoría especial y $50 por Kg para categoría aérea. Se cobra recargo por
 sobrepeso: 30% si sobrepasa los 15 Kg, 20% si pesa más de 10 Kg y hasta 15Kg
 inclusive, 10% más de 5Kg y hasta 10 Kg inclusive.
 Se desea calcular y mostrar el importe a pagar por cada uno de bultos al final
-del proceso el total recaudado por cada empresa y en cada una de las tres categorías.
+del proceso el total recaudado por cada empresa y por cada una de las tres categorías.
 Implementar y utilizar función Precio correctamente parametrizada que devuelva el
 importe a pagar por un bulto.}
 Program cargas;
