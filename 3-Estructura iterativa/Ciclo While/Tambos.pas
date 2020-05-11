@@ -43,11 +43,11 @@ Begin
 			read(Arch,Dia); //Debemos leerla al final del ciclo para evitar un loop infinito y sobreescribir los datos.
 		end;
 		Prom:= AcumLitros / SumDias;
-		writeln('a- ',Tambo,' entrego ',MaxLitros,' litros el dia: ',MaxDia);
-		writeln('b- ',Tambo,' promedio de leche entregada: ',Prom:2:0,' litros');
+		writeln(Tambo,' entrego ',MaxLitros,' litros el dia: ',MaxDia);
+		writeln(Tambo,' promedio de leche entregada: ',Prom:2:0,' litros');
 		writeln;
-		readln(Arch);
+		readln(Arch);// Se necesita este salto de linea para que cuando el dia sea 0 salte a leer el siguiente tambo.
 	end;
 	Close(Arch);
-	writeln('c- La cantidad de tambos que superaron ',X,' litros son: ',ContX);
+	writeln('La cantidad de tambos que superaron ',X,' litros son: ',ContX);
 end.
