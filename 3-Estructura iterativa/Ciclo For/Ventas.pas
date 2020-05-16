@@ -13,11 +13,26 @@ a. Cuánto debe abonar cada cliente
 b. Cuánto se recaudó al final del día por compras de clientes que compraron plantas de interior.
 c. Porcentaje de plantines aromáticos vendidas sobre el total de plantines vendidos.}
 Program TPCiclos;
+Function Costo(TipoP:char; CantP:byte):real;
+Var
+	Pr:real;
+Begin
+	Case TipoP of
+		'I':Pr:= CantP * 120;
+		'F':Pr:= CantP * 10;
+		'A':Pr:= CantP * 15;
+	end;
+	
+	If (Pr > 300) then
+		Pr:= Pr * 0.9;
+		
+	Costo:= Pr;
+end;
 Var
 	CantP,i,N:byte; //Cantidad de plantas
 	CantA,CantF,TotalP:word;
 	Espacio,TipoP:char; //Tipo de plantas.
-	Precio,Porc,Acum:real;
+	Porc,Acum,Pr:real;
 	Arch:text;
 begin
 	Assign(Arch,'Ventas.txt');reset(Arch);
@@ -34,32 +49,26 @@ begin
 				read(Arch,CantP,Espacio,TipoP)
 			Else
 				readln(Arch,CantP,Espacio,TipoP);
-					
+				
+			Pr:= Costo(TipoP,CantP);
+			
 			If (TipoP = 'I') then
 			begin	
-				Precio:= CantP * 120;
-				Acum:= Acum + Precio; //Acumulamos el precio de las plantas de interior para calcular la recaudacion total.
-				writeln('a- El cliente debe abonar: $',Precio:2:0,' por la compra de: ',CantP,Espacio,TipoP);
+				Acum:= Acum + Pr; //Acumulamos el precio de las plantas de interior para calcular la recaudacion total.
+				writeln('a- El cliente debe abonar: $',Pr:2:0,' por la compra de: ',CantP,Espacio,TipoP);
 			end
 			Else
 				If (TipoP = 'F') then
 				begin
-					Precio:= CantP * 10;
 					CantF:= CantF + CantP;
-					writeln('a- El cliente debe abonar: $',Precio:2:0,' por la compra de: ',CantP,Espacio,TipoP);
+					writeln('a- El cliente debe abonar: $',Pr:2:0,' por la compra de: ',CantP,Espacio,TipoP);
 				end
 				Else
 				begin
-					Precio:= CantP * 15;
 					CantA:= CantA + CantP; //Calcula la cantidad de plantas Aromaticas.
-					writeln('a- El cliente debe abonar: $',Precio:2:0,' por la compra de: ',CantP,Espacio,TipoP);
+					writeln('a- El cliente debe abonar: $',Pr:2:0,' por la compra de: ',CantP,Espacio,TipoP);
 				end;
-				
-				If (Precio > 300) then //Descuento por exceder los $300 en una compra.
-				begin	
-					Precio:= Precio * 0.9;
-					writeln('   Pero obtiene descuento y el nuevo monto es: $',Precio:2:0);
-				end;
+
 			TotalP:= CantF + CantA;	//Calcula el total de plantines.		
 			writeln;
 			Porc:= (CantA / TotalP) * 100; //Porcentaje de plantines aromaticos vendidos sobre el total de plantines.
