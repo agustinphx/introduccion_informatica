@@ -49,7 +49,10 @@ Begin
 			Else
 				writeln('El salto es Malo');
 				
-		If(Alt > Max) or (Dis > Max) then
+		If(Alt > Max) then
+			Max:= Cod
+		Else		
+			If(Dis > Max) then
 			Max:= Cod;
 			
 		writeln;
