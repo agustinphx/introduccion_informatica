@@ -15,16 +15,17 @@ Var
 
 Function CalculaImporte(Eact,Eant:real):real;
 Var
-	aux:real;
+	aux,E:real;
 begin
+	E:= Eact - Eant;
 	aux:= 50;
-	If(Eact <= 100) then
-		aux:= aux + (Eact * 5)
+	If(E <= 100) then
+		aux:= aux + (E * 5)
 	Else
-		if(Eact <= 250) then
-			aux:= aux + (Eact * 3.7)
+		if(E <= 250) then
+			aux:= aux + (E * 3.7)
 		Else
-			aux:= aux + (Eact * 2.5);
+			aux:= aux + (E * 2.5);
 	
 	CalculaImporte:= aux;
 end;
