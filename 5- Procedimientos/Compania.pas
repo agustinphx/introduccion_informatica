@@ -32,9 +32,8 @@ end;
 Procedure LeerArchivo(var N:byte);
 Var
 	i:byte;
-	NumC:word;
 	Esp:char;
-	Eant,Eact:real;
+	Eant,Eact,NumC:real;
 	arch:text;
 begin
 	assign(arch,'Compania.txt');reset(arch);
@@ -43,9 +42,10 @@ begin
 	begin
 		readln(arch,NumC);
 		read(arch,Eact,Esp,Eant);
-		writeln('Cliente: ',NumC,' debe abonar: $',CalculaImporte(Eact,Eant):2:2);
+		writeln('Cliente: ',NumC:2:0,' debe abonar: $',CalculaImporte(Eact,Eant):2:2);
 		writeln;
 	end;
+	close(arch);
 end;
 
 Begin 

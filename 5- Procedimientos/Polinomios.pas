@@ -36,6 +36,7 @@ begin
 		read(arch,a,b,c);	
 		MuestraRaices(a,b,c,x1,x2);
 	end;
+	close(arch);
 end;
 
 Begin

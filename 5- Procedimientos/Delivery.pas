@@ -13,23 +13,22 @@ Calcular e informar el costo de cada envío, el total facturado (incluye envío)
 Bonos otorgados.}
 Program delivery;
 Var
-	Dis,N,Cant:byte;
-	Espacio:char;
-	CostE,Cost,Total:real;	
+	N,Dis:byte;
+	Cost:real;	
 
 Function CostoEnvio(dis:byte; cost:real):real;
 Begin
 	Case dis of
-		1..4:cost:=0;
-		5..10:cost:=10;
-		11..25:cost:=15;
+		1..4:cost:= 0;
+		5..10:cost:= 10;
+		11..25:cost:= 15;
+		26..100:cost:= 15 + (dis - 25) * 2;
 	end;
-	
-	If (Dis > 25) then
-		cost:= 15 + (Dis - 25) * 2;
 
+	If(cost >= 500) then
+		cost:= 0;
+		
 	CostoEnvio:= cost;
-	writeln('El costo de envio es: $',cost:2:0);
 end;
 
 Function CantidadBonos(dis:byte):byte;
@@ -37,47 +36,50 @@ Var
 	CantB:byte;
 begin
 	CantB:= 0;
-	
 	If (dis > 5) and (cost / 200 = 1) then
 		CantB:= 1
 	Else
 		if (dis > 5) and (cost / 200 = 2) then
 			CantB:= 2;
-
+			
 	CantidadBonos:= CantB;
 end; 
 
-Procedure LeerArchivo (var N,CantB:byte;  var CostE,Total:real);
+Procedure LeerArchivo (var N:byte);
 Var
-	i:byte;
+	i,CantB:byte;
+	Total,Pr:real;
 	arch:text;
 begin
 	Assign(arch,'Delivery.txt');reset(arch);
 	readln(arch,N);
 	Total:= 0;
-	while not eof (arch) do
+	CantB:= 0;
+	For i:= 1 to N do
 	begin
-		For i:= 1 to N do
-		begin
-			if (i <> N) then
-				read(arch,Cost,Espacio,Dis)
-			Else
-				readln(arch,Cost,Espacio,Dis);
-				
-			writeln(Cost:2:0);
-			CostE:= CostoEnvio(Dis,Cost);
-			Total:= Total + Cost + CostE;
-			CantB:= CantidadBonos(Dis);
+		readln(arch,Cost,Dis);
+		Pr:= CostoEnvio(dis,cost);
+		CantB:= CantB + CantidadBonos(dis);
+		
+		Case CantB of
+			1:Cost:= Cost - 10;
+			2:Cost:= Cost - 20;
 		end;
+				
+		If(Cost > 500) then
+			Pr:= 0;
+		
+		writeln('El costo por este envio es: $',Pr:2:0,' y obtuvo: ',CantB,' bonos');
+		Total:= Total + Cost + Pr ;
 	end;
 	close(arch);
-	writeln('El costo total es: ',Total:2:0);
-	writeln('La cantidad de bonos son: ',CantB);
+	writeln;
+	writeln('El total facturado es: $',Total:2:0);
+	writeln('La cantidad total de bonos son: ',CantB);
 end;
 
-
-
 Begin
-	LeerArchivo(N,Cant,CostE,Cost);
- 	CantidadBonos(Dis);
+	LeerArchivo(N);
+	CostoEnvio(dis,cost);
+	CantidadBonos(dis);
 end.
