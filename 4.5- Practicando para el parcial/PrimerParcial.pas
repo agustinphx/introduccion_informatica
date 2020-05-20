@@ -82,7 +82,6 @@ Begin
 			end;
 			read(arch,TiempoE);
 		end;
-			
 		writeln(Nom,' maximo estimado: ',MaxE:2:0,' y un maximo real: ',MaxR:2:0,' y una calificacion de: ',Rendimiento(TiempoET,TiempoRT));
 		writeln;
 		readln(arch);
