@@ -43,7 +43,7 @@ begin
 	begin
 		readln(arch,NumC);
 		read(arch,Eact,Esp,Eant);
-		writeln('Cliente: ',NumC:2:0,' debe abonar: $',CalculaImporte(Eact,Eant):2:2);
+		writeln('Cliente: ',NumC:2:0,' tuvo un consumo de: ',Eact:2:2,' kw  por lo que debe abonar: $',CalculaImporte(Eact,Eant):2:2);
 		writeln;
 	end;
 	close(arch);

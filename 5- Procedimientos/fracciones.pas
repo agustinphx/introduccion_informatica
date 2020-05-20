@@ -9,8 +9,8 @@ Procedure DevolverSuma(A,B,C,D:real);
 Begin	
 	Frac1:= D*A + B*C;
 	Frac2:= B*D;
-	writeln('El numerador es: ' ,Frac1:2:2);
-	writeln('El denominador es: ' ,Frac2:2:2);
+	writeln('El numerador es: ' ,Frac1:2:0);
+	writeln('El denominador es: ' ,Frac2:2:0);
 end;
 
 Begin

@@ -22,13 +22,13 @@ a un desarrollador, sabiendo que se califica al integrante del equipo, según el
 respecto al total de horas laborales :
 ‘E’=Excelente si T<= 0 , ‘M’=Muy Bueno 0 < T <= 3 horas
 ‘B’=Bueno 3 < T <= 5 y ‘R’=Regular si T > 5}
-Program Tareas;
-{Function Rendimiento(TiempoET,TiempoRT:real):char;
+Program PrimerParcial;
+Function Rendimiento(TiempoET,TiempoRT:real):char;
 Var
 	Ren:char;
 	aux:real;
 begin
-	aux:= TiempoET - TiempoRT;
+	aux:= TiempoRT - TiempoET;
 	If (aux <= 0) then
 		Ren:= 'E'
 	Else
@@ -38,25 +38,25 @@ begin
 			if (aux <= 5) then
 				Ren:= 'B'
 			Else
-				Ren:= 'R'
+				Ren:= 'R';
+				
 	Rendimiento:= Ren;
-end;}
+end;
 
 Var
 	Nom,MinNom,MaxNom:string[8];
-	//Ren:char;
 	i,N:byte;
-	TiempoE,TiempoR,MaxE,MaxR,MinE,MinR,Ren,TiempoET,TiempoRT:real;
+	TiempoE,TiempoR,MaxE,MaxR,MinE,MinR,TiempoET,TiempoRT:real;
 	arch:text;
 Begin
 	MinR:= 999;
 	MinE:= 999;
-	assign(arch,'Tareas.txt');reset(arch);
+	MaxR:= 0;
+	MaxE:= 0;
+	assign(arch,'PrimerParcial.txt');reset(arch);
 	readln(arch,N);
 	For i:= 1 to N do
 	begin
-		MaxR:= 0;
-		MaxE:= 0;
 		TiempoET:= 0;
 		TiempoRT:= 0;
 		readln(arch,Nom);
@@ -66,12 +66,14 @@ Begin
 			readln(arch,TiempoR);
 			TiempoET:= TiempoET + TiempoE;
 			TiempoRT:= TiempoRT + TiempoR;	
+			
 			If(TiempoE > MaxE) then
 			begin
 				MaxE:= TiempoE;
 				MaxR:= TiempoR;
 				MaxNom:= Nom;
 			end;
+			
 			If (TiempoR < MinR) then
 			begin	
 				MinE:= TiempoE;
@@ -80,29 +82,8 @@ Begin
 			end;
 			read(arch,TiempoE);
 		end;
-		Ren:= TiempoRT - TiempoET;
-		{Ren:= Rendimiento(TiempoET,TiempoRT);
-		If (Ren = 'E') then
-				writeln('El rendimiento es Excelente')
-			Else
-			if (Ren = 'M') then
-				writeln('El rendimiento es Muy Bueno')
-			Else
-				if (Ren = 'B') then
-					writeln('El rendimiento es Bueno')
-				Else
-					writeln('El rendimiento es Regular');}				
-		writeln(Nom,' maximo estimado: ',MaxE:2:0,' y un maximo real: ',MaxR:2:0,' con una diferencia en los totales de: ',Ren:2:0);
-		If (Ren  <= 0) then
-				writeln('a- El rendimiento es Excelente')
-			Else
-			if (Ren  <= 3) then
-				writeln('a- El rendimiento es Muy Bueno')
-			Else
-				if (Ren <= 5) then
-					writeln('a- El rendimiento es Bueno')
-				Else
-					writeln('a- El rendimiento es Regular');
+			
+		writeln(Nom,' maximo estimado: ',MaxE:2:0,' y un maximo real: ',MaxR:2:0,' y una calificacion de: ',Rendimiento(TiempoET,TiempoRT));
 		writeln;
 		readln(arch);
 	end;
