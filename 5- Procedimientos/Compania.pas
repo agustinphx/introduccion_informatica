@@ -10,8 +10,6 @@ $5 consumo <=100
 $3.7 100< consumo <=250
 $2.5 250 < consumo}
 Program compania;
-Var
-	N:byte;
 
 Function CalculaImporte(Eact,Eant:real):real;
 Var
@@ -30,9 +28,9 @@ begin
 	CalculaImporte:= aux;
 end;
 
-Procedure LeerArchivo(var N:byte);
+Procedure LeerArchivo;
 Var
-	i:byte;
+	i,N:byte;
 	Esp:char;
 	Eant,Eact,NumC:real;
 	arch:text;
@@ -50,5 +48,5 @@ begin
 end;
 
 Begin 
-	LeerArchivo(N);
+	LeerArchivo;
 end.

@@ -2,7 +2,6 @@
 reales, calcular y mostrar las raíces de cada uno}
 Program Polinomios;
 Var
-	N:byte;
 	a,b,c,x1,x2:real;
 	
 Procedure MuestraRaices(a,b,c:real; var x1,x2:real); 
@@ -24,9 +23,9 @@ begin
 	writeln;	
 end;
 
-Procedure LeerArchivo(var N:byte);
+Procedure LeerArchivo;
 Var
-	i:byte;
+	i,N:byte;
 	arch:text;
 begin
 	assign(arch,'Polinomios.txt');reset(arch);
@@ -40,7 +39,7 @@ begin
 end;
 
 Begin
-	LeerArchivo(N);
+	LeerArchivo;
 end.
 
 	{assign(arch,'Polinomios.txt');reset(arch);
