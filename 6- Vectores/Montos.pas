@@ -24,13 +24,6 @@ begin
 	Promedio:= Suma(Vec,K) / K;
 end;
 
-{Function Porcentaje(Vec:TV; K:byte):real;
-Var
-	i:byte;
-begin
-	Porcentaje:= (Vec[i] / Suma(Vec,K) ) * 100;
-end;}
-
 Procedure MuestraDescendente(Vec:TV; K:byte);
 Var
 	i:byte;
