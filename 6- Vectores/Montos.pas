@@ -24,37 +24,43 @@ begin
 	Promedio:= Suma(Vec,K) / K;
 end;
 
+{Function Porcentaje(Vec:TV; K:byte):real;
+Var
+	i:byte;
+begin
+	Porcentaje:= (Vec[i] / Suma(Vec,K) ) * 100;
+end;}
+
+Procedure MuestraDescendente(Vec:TV; K:byte);
+Var
+	i:byte;
+begin
+	For i:= K downto 1 do
+		writeln('$',Vec[i]:2:2);
+end;
+
 Procedure IngresaMontos(Var Vec:TV);
 Var
 	i,K:byte;
+	Porc:real;
 begin
 	write('Ingrese la cantidad de ventas: ');readln(K);											
 	For i:= 1 to K do
 	begin
+		writeln;
 		write('Ingrese el monto de la venta: ');readln(Vec[i]);
 		Suma(Vec,K);
 		Promedio(Vec,K);
+		Porc:= (Vec[i] / Suma(Vec,K)) * 100;
+		writeln('El porcentaje de participacion de: ',Vec[i]:2:0,' es: ',Porc:2:0,' %');
 	end;
 	writeln;
 	writeln('El promedio es de: $',Promedio(Vec,K):2:2);
-	
+	writeln;
+	writeln('Montos en forma descendente');
+	MuestraDescendente(Vec,K);
 end;
 
 Begin
 	IngresaMontos(Vec);
 end.
-
-
-{Function Porcentaje(Vec:TV; K:byte):real;
-Var
-	i:byte;
-	Porc:real;
-begin
-	For i:= 1 to K do
-		Porc:= Suma(Vec,K) / K * 100;
-	Porcentaje:= Porc;
-end;
-* 
-* 
-* Porcentaje(Vec,K);
-* writeln('El porcentaje de participacion de ',Vec[i]:2:0,' es: ',Porcentaje(Vec,K):2:0,' %');}
