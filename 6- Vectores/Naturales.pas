@@ -11,7 +11,7 @@ Type
 	TV = array[1..100] of byte;
 Var
 	Vec:TV;
-	
+	M:byte;
 Procedure LugarMaximo(Vec:TV; M:byte);
 Var
 	i,Max,MaxI:byte;
@@ -26,15 +26,26 @@ begin
 			MaxI:= i;
 		end;
 	end;
+	writeln;
 	writeln('El maximo numero es ',Max,' en el lugar: ',MaxI);
 end;
 
-Procedure Multiplica(Vec:TV; M:byte);
+Procedure Multiplica(M:byte; Var Vec:TV);
 Var
 	i:byte;
 	Num:word;
 begin
-	For i:= 1 to M do
+	write('Ingrese un numero para multiplicarlo con los de posiciones pares: ');readln(Num); //Para multiplicarlo con todos los numeros de posición par.
+	i:= 2;
+	while (Num <> 0) do
+	begin
+		If (i <= M) then
+		begin
+			writeln('El numero multiplicado es: ',Num* Vec[i]);
+			i:= i + 2
+		end;
+	end;
+	{For i:= 1 to M do //Para multiplicarlo individualmente.
 	begin
 		if (i MOD 2 = 0) then
 		begin
@@ -45,7 +56,7 @@ begin
 				writeln(Num);
 			end;
 		end;
-	end;
+	end;}
 end;
 
 Procedure Informa(Vec:TV; M:byte);
@@ -57,7 +68,7 @@ begin
 	ContN:= 0;
 	For i:= 1 to M do
 	begin
-		If (Vec[i] = 0) then //Debe ir primera esta condicion de nulo porque si lo ponemos al final puede contarlo mal.
+		If (Vec[i] = 0) then //Debe ir primera esta condición de nulo porque si lo ponemos al final puede contarlo mal.
 			ContN:= ContN + 1
 		Else
 			if (Vec[i] MOD 2 = 0) then
@@ -83,9 +94,11 @@ begin
 	writeln;
 	Informa(Vec,M);
 	writeln;
-	Multiplica(Vec,M);
+	Multiplica(M,Vec);
 end;
 
 Begin
 	IngresaNumeros(Vec);
+	Informa(Vec,M);
+	Multiplica(M,Vec);
 end.

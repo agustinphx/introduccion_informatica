@@ -29,7 +29,7 @@ begin
 	Porcentaje:= (Vec[i] / Suma(Vec,K)) * 100;
 end;
 
-Procedure MuestraDescendente(Vec:TV; K:byte);
+Procedure MuestraDescendente(var Vec:TV; K:byte);
 Var
 	i:byte;
 begin
