@@ -5,10 +5,9 @@ Ejemplo:
 Archivo : 5 7 1 12 15 -8 10 2 25 26 50 13
 A= (5, 7, 1, 12, 15, -8, 10, 2, 25, 26, 50, 13)
 Maximo = 50 Prom=15.5 B=( 5, 1, 10, 2, 25, 50 )}
-
 Program TP_array;
 Type
-	TV = array[1..12] of integer;
+	TV = array[1..100] of integer;
 
 Procedure LeerArchivo(Var A:TV; Var N:byte);
 Var
