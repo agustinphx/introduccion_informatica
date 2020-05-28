@@ -8,7 +8,7 @@ Maximo = 50 Prom=15.5 B=( 5, 1, 10, 2, 25, 50 )}
 Program TP_array;
 Type
 	TV = array[1..100] of integer;
-
+	
 Procedure LeerArchivo(Var A:TV; Var N:byte);
 Var
 	arch:text;
@@ -23,19 +23,34 @@ begin
 	close(arch);
 end;
 
+Function Maximo(A:TV; N:byte):byte;
+Var
+	i,Max:byte; //Podria haber asignado a Max como tipo de dato Word al igual que la salida de la función pero como en este caso se solicita con un numero maximo de 50 lo deje en Byte.
+begin
+	Max:= 0;
+	For i:= 1 to N do
+	begin
+		If (A[i] > Max) then
+			Max:= A[i];
+	end;
+	Maximo:= Max;
+end;
+
 Procedure GenerarArray(A:TV; N:byte; Var B:TV; Var M:byte);
 Var
 	i:byte;
 begin	
 	M:= 0;
 	For i:= 1 to N do
-	begin
-		If (50 MOD A[i] = 0) then
+	begin	
+		If (Maximo(A,N) MOD A[i] = 0) then //Se genera el array en base a los divisores del numero maximo.
 		begin
 			M:= M + 1;
 			B[M]:= A[i];
 		end;		
 	end;
+	writeln('Maximo: ',Maximo(A,N));
+	writeln;
 end;
 
 Function Promedio(B:TV; M:byte):real;

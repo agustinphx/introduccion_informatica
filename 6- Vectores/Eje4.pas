@@ -17,20 +17,33 @@ begin
 		readln(arch,V[i]);
 end;
 
-Procedure Suma(var V:TV; K:byte; Var VSum:TV);
+Procedure GenerarArray(V:TV; K:byte; Var VSum:TV; Var N:byte);
 Var
-	i,N:byte;
+	i:byte;
+begin
+	N:= 0;
+	For i:= 1 to K do
+	begin
+		If (V[i] = 0) then
+		begin
+			N:= N + 1;
+			VSum[N]:= V[i];
+		end;
+	end;
+end;
+
+Procedure Suma(var V:TV; K:byte; Var VSum:TV; Var N:byte);
+Var
+	i:byte;
 	Sum:real;
 begin
 	Sum:= 0;
-	N:= 0;
 	For i:= 1 to K do
 	begin	
 		If (V[i] <> 0) then
 			Sum:= Sum + V[i]
 		Else
 		begin
-			N:= N + 1;
 			VSum[N]:= Sum;
 			writeln(VSum[N]:2:0);
 			Sum:= 0;
@@ -40,8 +53,9 @@ end;
 
 Var
 	V,VSum:TV;
-	K:byte;
+	K,N:byte;
 Begin
 	LeeVector(V,K);
-	Suma(V,K,VSum);
+	GenerarArray(V,K,VSum,N);
+	Suma(V,K,VSum,N);
 end.
