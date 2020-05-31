@@ -28,13 +28,13 @@ begin
 	Cont:= 0;
 	For i:= 1 to N do
 	begin
-		If (X = V[i]) then
+		If (V[i] = X) then
 		begin
 			Cont:= Cont + 1;
 			writeln('El numero ',X:2:0,' pertenece al conjunto en la posicion ',i);
 		end;
 	end;
-	
+	writeln;
 	If (Cont = 0) then
 		writeln('El numero no pertenece al conjunto')
 	Else
@@ -47,6 +47,7 @@ Var
 	X:real;
 Begin
 	write('Ingrese un numero: ');readln(X);
+	writeln;
 	LeeVector(V,N);
 	writeln;
 	Busca(V,N,X);
