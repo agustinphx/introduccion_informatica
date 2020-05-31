@@ -30,19 +30,20 @@ var
 	i:byte; 
 	divisor,suma:integer;
 Begin 
-	suma:= 0; divisor := 0;
+	suma:= 0; 
+	divisor := 0;
 	For i:= 1 to M do
 	begin
 		If ((matriz[N,i] mod vector[N]) = 0) then
 		begin
 			divisor := divisor + 1;
 			suma:= suma + matriz[N,i];
+		end;
 	end;
-end;
-If suma > 0 then
-	Promedio := suma / divisor
-Else
-	Promedio:= 0;
+	If suma > 0 then
+		Promedio := suma / divisor
+	Else
+		Promedio:= 0;
 end;
 	
 Function BusquedaPromedio(VProm: TR; N:byte; promedio: real):boolean;
