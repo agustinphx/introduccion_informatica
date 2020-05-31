@@ -2,7 +2,7 @@
 de componentes ingresadas para cada uno de los vectores no es la misma indicar con un cartel y
 finalizar, de lo contrario calcular:
 a. La suma y la diferencia de los vectores. 
-b. El vector que posee mas elementos.}
+b. El vector que posee mas elementos}
 Program eje6;
 Type
 	TV = array[1..100] of integer;
@@ -23,6 +23,7 @@ begin
 		write('Ingrese un numero para el vector B: ');readln(VB[i]);
 	end;
 end;
+
 Procedure Compara(VA,VB:TV; N,M:byte);
 Var
 	i,ContA,ContB:byte;
@@ -49,6 +50,7 @@ begin
 	writeln;
 	writeln('La diferencia entre los vectores es (A - B) es: ',Dif);
 	writeln;
+	
 	If (ContA > ContB) then
 		writeln('El vector A posee mas elementos que el B')
 	Else
