@@ -26,35 +26,31 @@ end;
 
 Procedure Compara(VA,VB:TV; N,M:byte);
 Var
-	i,ContA,ContB:byte;
+	i:byte;
 	SumA,SumB,Dif:integer;
 begin
-	ContA:= 0;
-	ContB:= 0;
 	SumA:= 0;
 	SumB:= 0;
 	For i:= 1 to N do
 	begin
 		SumA:= SumA + VA[i];
-		ContA:= ContA + 1;
 	end;
 	For i:= 1 to M do
 	begin
 		SumB:= SumB + VB[i];
-		ContB:= ContB + 1;
 	end;
 	writeln;
 	Dif:= SumA - SumB;
 	writeln('La suma del vector A es: ',SumA);
 	writeln('La suma del vector B es: ',SumB);
 	writeln;
-	writeln('La diferencia entre los vectores es (A - B) es: ',Dif);
+	writeln('La diferencia entre los vectores (A - B) es: ',Dif);
 	writeln;
 	
-	If (ContA > ContB) then
-		writeln('El vector A posee mas elementos que el B')
+	If (N > M) then
+		writeln('El vector A es el que  posee mas cantidad de elementos ')
 	Else
-		writeln('El vector B posee mas elementos que el A');
+		writeln('El vector B es el que posee mas cantidad de elementos ');
 end;
 
 Var
