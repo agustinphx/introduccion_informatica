@@ -31,11 +31,12 @@ end;
 Procedure Elimina (Var V:TV; Var N:byte);
 Var
 	i: byte;
-	aux:integer;
+	aux,Max:integer;
 begin
+	Max:= Maximo(V,N);
 	For i:= 1 to N- 1 do
 	begin
-		If (V[i] = Maximo(V,N)) then
+		If (V[i] = Max) then
 		begin
 			aux:= V[i];
 			V[i]:= V[i + 1];
