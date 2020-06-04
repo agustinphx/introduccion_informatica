@@ -1,6 +1,6 @@
 Program vectores;
 Type
-	TV = array [1..100000] of integer;
+	TV = array [1..100] of integer;
 Var
 	V:TV;
 	N:byte;
@@ -10,8 +10,7 @@ Var
 	arch:text;
 Begin
 	N:=0;
-	assign(arch,'eje5vectores.txt');
-	reset(arch);
+	assign(arch,'eje5vectores.txt');reset(arch);
 	while not eof(arch) do
 	begin
 		N:= N + 1;
