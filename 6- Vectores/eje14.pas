@@ -11,7 +11,7 @@ begin
 	write('Ingrese la cantidad de elementos del vector: ');readln(N);
 	For i:= 1 to N do
 	begin
-		write('Ingrese un numero: ');readln(V[i]);
+		write('Ingrese un numero (en forma ascendente) : ');readln(V[i]);
 	end;
 end;
 
@@ -37,7 +37,7 @@ begin
 	writeln('Vector  sin numeros repetidos');
 	For i:= 1 to M do
 	begin
-		writeln(Vrepe[i]);
+		write(Vrepe[i]:3);
 	end;
 end;
 
