@@ -67,7 +67,6 @@ begin
 		writeln('   no es una mochila perfecta, el primer elemento que no cumple es ',V[i])
 	else
 		writeln('   es una mochila es perfecta');
-		
 end;
 
 Procedure Imprime(V:TV; N:byte);
