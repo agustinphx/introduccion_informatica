@@ -46,8 +46,6 @@ begin
 	writeln('El mes con mayor cantidad de cumpleanios es ',MaxM,' con ',Max,' cumpleanios');
 end;
 
-
-
 Var
 	Mes:TVM;
 	Cant:TVC;

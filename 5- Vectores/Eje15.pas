@@ -7,13 +7,11 @@ Type
 Procedure LeeVector(Var A:TV; Var N:byte);
 Var
 	i:byte;
-	Num:real;
 begin
 	write('Ingrese la cantidad de elementos del vector: ');readln(N);
 	For i:= 1 to N do
 	begin
-		write('Ingrese un numero: ');readln(Num);
-		A[i]:= Num;
+		write('Ingrese un numero: ');readln(A[i]);
 	end;
 end;
 
@@ -24,7 +22,7 @@ begin
 	M:= 0;
 	For i:= 1 to N - 1 do
 	begin
-		If (A[i] > Num) then
+		If (A[i] > A[i + 1]) then
 		begin
 			B[M]:= A[i];
 			M:= M + 1;
@@ -32,18 +30,24 @@ begin
 	end;
 end;
 
-Procedure InsertaOrdenado(Var B:TV; Var M:byte; Num:real);
+Procedure Burbujeo (Var A:TV; N:byte; B:TV);
 Var
-	i:byte;
+	aux:real;
+	i,K,Tope :byte;
 begin
-	i:= M;
-	while (i > 0) and (B[i] > Num) do
-	begin
-		B[i + 1]:= B[i]; 
-		i:= i - 1;
-	end;
-	B[i + 1]:= Num;
-	M:= M + 1;
+	Tope:= N ;
+	Repeat
+		K:= 0;
+		For i := 1 to Tope -1 do
+			If A[i] > A[i+1] then
+			begin
+				aux:= B[i];
+				B[i]:= B[i+1]; 
+				B[i+1]:=aux;
+				K:= i ;
+			end;
+			Tope:= K ;
+	Until K <=1;
 end;
 
 Procedure Imprime(B:TV; M:byte);
@@ -57,11 +61,10 @@ end;
 Var
 	A,B:TV;
 	N,M:byte;
-	Num:real;
 Begin
 	LeeVector(A,N);
 	GenerarArray(A,N,B,M);
-	InsertaOrdenado(B,N,Num);
+	Burbujeo(A,N,B);
 	writeln;
 	Imprime(B,M);
 end.

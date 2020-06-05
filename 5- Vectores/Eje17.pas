@@ -2,7 +2,7 @@
 las unidades:
   Tipo (1-particular, 2-carga, 3-transporte de pasajeros, 4-oficial, 5-servicios)
   Costo de la reparación
-Se pide leer la información para calcular e informar el total recaudado, además para cada tipo, el monto recaudado y el
+Se pide leer la información para calcular e informar para cada tipo, el monto recaudado y el
 porcentaje que representa del total. }
 Program eje17;
 Type
@@ -95,8 +95,6 @@ Begin
 	LeerArchivo(Tipo,Cost,N);
 	Suma(Tipo,Cost,N,aux1,aux2,aux3,aux4,aux5);
 	Porcentaje(Tipo,Cost,N,aux1,aux2,aux3,aux4,aux5);
-	writeln;
-	writeln('El total recaudado es: $',SumaTotal(Tipo,Cost,N):2:0);
 end.	
 
 
