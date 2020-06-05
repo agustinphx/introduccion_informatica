@@ -5,7 +5,7 @@ dicha información para emitir el siguiente listado:
  Enero 100
  Febrero 350
  Marzo 270
-Además indicar el mes con mayor cantidad de cumpleaños.}
+Además indicar el mes con mayor cantidad de cumpleaños.0}
 Program eje16;
 Type
 	st9 = string[9];

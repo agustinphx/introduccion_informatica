@@ -84,17 +84,18 @@ Begin
     For i:= 1 to N do
     begin
         If (AnioInf <= VA[i]) and (AnioSup >= VA[i]) then
-			begin
-				Cant:= Cant + 1;
-				Pr:= Pr + VPre[i];
-			end;
-      end;
-	  If (Pr > 0) then
-      begin
-        Prom:= Pr / Cant;
+		begin
+			Cant:= Cant + 1;
+			Pr:= Pr + VPre[i];
+		end;
+    end;
+    
+	If (Pr > 0) then
+    begin
+		Prom:= Pr / Cant;
         writeln('El precio promedio entre esos anios es de: $',Prom:2:0)
-      end
-	  else
+    end
+	else
 		writeln('No existen autos en esos anios');   
 end;
 

@@ -62,8 +62,6 @@ begin
 	SumaTotal:= aux;
 end;
 
-
-
 Procedure Porcentaje(Tipo:TV; Cost:TVC; N:byte; aux1,aux2,aux3,aux4,aux5:real);
 Var
 	i:byte;
@@ -86,7 +84,6 @@ begin
 	writeln('El porcentaje segun el total del tipo 3 es: ',Porc3:2:0,' %');
 	writeln('El porcentaje segun el total del tipo 4 es: ',Porc4:2:0,' %');
 	writeln('El porcentaje segun el total del tipo 5 es: ',Porc5:2:0,' %');
-
 end;
 
 Var
@@ -98,6 +95,8 @@ Begin
 	LeerArchivo(Tipo,Cost,N);
 	Suma(Tipo,Cost,N,aux1,aux2,aux3,aux4,aux5);
 	Porcentaje(Tipo,Cost,N,aux1,aux2,aux3,aux4,aux5);
+	writeln;
+	writeln('El total recaudado es: $',SumaTotal(Tipo,Cost,N):2:0);
 end.	
 
 

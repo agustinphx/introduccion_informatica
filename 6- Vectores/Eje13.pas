@@ -34,7 +34,7 @@ Var
 	aux,Max:integer;
 begin
 	Max:= Maximo(V,N);
-	For i:= 1 to N- 1 do
+	For i:= 1 to N - 1 do
 	begin
 		If (V[i] = Max) then
 		begin

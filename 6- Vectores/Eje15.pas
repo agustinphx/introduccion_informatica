@@ -22,13 +22,13 @@ Var
 	i:byte;
 begin
 	M:= 0;
-	For i:= 1 to N do
+	For i:= 1 to N - 1 do
 	begin
-		//If (A[i] < Num) then
-		//begin
+		If (A[i] > Num) then
+		begin
 			B[M]:= A[i];
 			M:= M + 1;
-		//end;
+		end;
 	end;
 end;
 
@@ -37,7 +37,7 @@ Var
 	i:byte;
 begin
 	i:= M;
-	while (i > 0) and (B[i] < Num) do
+	while (i > 0) and (B[i] > Num) do
 	begin
 		B[i + 1]:= B[i]; 
 		i:= i - 1;
