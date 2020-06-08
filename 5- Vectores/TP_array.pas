@@ -25,7 +25,7 @@ end;
 
 Function Maximo(A:TV; N:byte):byte;
 Var
-	i,Max:byte; //Podria haber asignado a Max como tipo de dato Word al igual que la salida de la función pero como en este caso se solicita con un numero maximo de 50 lo deje en Byte.
+	i,Max:byte;
 begin
 	Max:= 0;
 	For i:= 1 to N do
@@ -39,18 +39,18 @@ end;
 Procedure GenerarArray(A:TV; N:byte; Var B:TV; Var M:byte);
 Var
 	i:byte;
+	Max:byte;
 begin	
 	M:= 0;
+	Max:= Maximo(A,N);
 	For i:= 1 to N do
 	begin	
-		If (Maximo(A,N) MOD A[i] = 0) then //Se genera el array en base a los divisores del numero maximo.
+		If (Max MOD A[i] = 0) then 
 		begin
 			M:= M + 1;
 			B[M]:= A[i];
 		end;		
 	end;
-	writeln('Maximo: ',Maximo(A,N));
-	writeln;
 end;
 
 Function Promedio(B:TV; M:byte):real;
@@ -68,28 +68,14 @@ begin
 	Promedio:= Suma / Cont;
 end;
 
-Procedure ImprimeArrayA(A:TV; N:byte);
+Procedure ImprimeArray(A:TV; N:byte);
 Var
 	i:byte;
 begin
-	writeln('Vector A');
 	For i:= 1 to N do
-		write(A[i],' ');
+		write(A[i]:4);
 end;
 
-Procedure ImprimeArrayB(B:TV; M:byte);
-Var
-	i:byte;
-begin
-	writeln;
-	writeln;
-	writeln('Vector B');
-	For i:= 1 to M do
-		write(B[i],' ');
-	writeln;
-	writeln;
-	writeln('El promedio de los divisores del maximo es: ',Promedio(B,M):2:1);	
-end;
 
 Var
 	A,B:TV;
@@ -97,6 +83,12 @@ Var
 Begin
 	LeerArchivo(A,N);
 	GenerarArray(A,N,B,M);
-	ImprimeArrayA(A,N);
-	ImprimeArrayB(B,M);
+	writeln('Maximo: ',Maximo(A,N));
+	writeln;
+	write('Vector A: ');
+	ImprimeArray(A,N);
+	writeln;
+	writeln;
+	write('Vector B: ');
+	ImprimeArray(B,M);
 end.

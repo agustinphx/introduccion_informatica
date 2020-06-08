@@ -12,11 +12,11 @@ Type
 	TV = array[1..100] of integer;
 
 Procedure LeerArchivo(var V:TV; var N:byte);
-var
+Var
 	i,B:integer;  
 	arch:text;
 begin
-	i:=0;
+	i:= 0;
 	assign(arch,'Ad3.txt');reset(arch);
 	while not eof (arch) do
 	begin
@@ -33,12 +33,12 @@ begin
 				V[i]:= B;
 			end;
 	end;
-	N:=i;
+	N:= i;
 	close(arch);
 end;
 		
 Procedure insertarOrdenado(var V:TV; N,B:integer);
-var 
+Var 
 	i:byte;
 begin 
 	i:= N;
@@ -51,7 +51,7 @@ begin
 end;
 
 Procedure MochilaPerfecta(V:TV; N:byte);
-var 
+Var 
 	i:byte; 
 	Sum:word; 
 begin
