@@ -23,8 +23,6 @@ begin
 	begin
 		write('Ingrese un numero: ');readln(B[i]);
 	end;
-	
-	
 end;
 
 Function Suma(A:TVA; B:TVB; N:byte):integer;
