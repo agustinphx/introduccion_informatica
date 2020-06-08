@@ -76,7 +76,6 @@ begin
 		write(A[i]:4);
 end;
 
-
 Var
 	A,B:TV;
 	N,M:byte;
@@ -84,6 +83,8 @@ Begin
 	LeerArchivo(A,N);
 	GenerarArray(A,N,B,M);
 	writeln('Maximo: ',Maximo(A,N));
+	writeln;
+	writeln('El promedio de los maximos es: ',Promedio(B,M):2:1);
 	writeln;
 	write('Vector A: ');
 	ImprimeArray(A,N);
