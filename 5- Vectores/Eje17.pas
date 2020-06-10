@@ -6,9 +6,13 @@ Se pide leer la información para calcular e informar para cada tipo, el monto r
 porcentaje que representa del total. }
 Program eje17;
 Type
+	St10 = String[10];
 	TV = array[0..100] of byte;
 	TVC = array[0..100] of real;
-
+	TVConst = array[1..5] of st10;
+Const
+  TipoServicio:TVConst = ('Particular','Carga','Transporte','Oficial','Servicios');
+  
 Procedure LeerArchivo(Var Tipo:TV; Var Cost:TVC; Var N:byte);
 Var
 	Arch:text;
@@ -21,32 +25,6 @@ begin
 		readln(Arch,Tipo[N],Cost[N]);
 	end;
 	close(arch);
-end;
-
-Procedure Suma(Tipo:TV; Cost:TVC; N:byte; Var aux1,aux2,aux3,aux4,aux5:real);
-Var
-	i:byte;
-begin
-	aux1:= 0;
-	aux2:= 0;
-	aux3:= 0;
-	aux4:= 0;
-	aux5:= 0;
-	For i:= 1 to N do
-	begin
-		Case Tipo[i] of
-			1:aux1:= aux1 + Cost[i];
-			2:aux2:= aux2 + Cost[i];
-			3:aux3:= aux3 + Cost[i];
-			4:aux4:= aux4 + Cost[i];
-			5:aux5:= aux5 + Cost[i];
-		end;
-	end;
-	writeln('Total recaudado por el tipo 1: $',aux1:2:0);
-	writeln('Total recaudado por el tipo 2: $',aux2:2:0);
-	writeln('Total recaudado por el tipo 3: $',aux3:2:0);
-	writeln('Total recaudado por el tipo 4: $',aux4:2:0);
-	writeln('Total recaudado por el tipo 5: $',aux5:2:0);
 end;
 
 Function SumaTotal(Tipo:TV; Cost:TVC; N:byte):real;
@@ -62,39 +40,32 @@ begin
 	SumaTotal:= aux;
 end;
 
-Procedure Porcentaje(Tipo:TV; Cost:TVC; N:byte; aux1,aux2,aux3,aux4,aux5:real);
+Procedure Porcentaje(Tipo:TV; Cost:TVC; N:byte; Var SumaTipo:TVC);
 Var
-	i:byte;
-	Tot,Porc1,Porc2,Porc3,Porc4,Porc5:real;
+	i,j,aux:byte;
+	Porc,SumaTotal:real;
 begin
-	Tot:= SumaTotal(Tipo,Cost,N);
+	SumaTotal:= 0; 
 	For i:= 1 to N do
-	begin			
-		Case Tipo[i] of
-			1:Porc1:= (aux1 / Tot) * 100;
-			2:Porc2:= (aux2 / Tot) * 100;
-			3:Porc3:= (aux3 / Tot) * 100;
-			4:Porc4:= (aux4 / Tot) * 100;
-			5:Porc5:= (aux5 / Tot) * 100;	
-		end;
+	begin
+		SumaTotal:= SumaTotal + Cost[i];
+		aux:= Tipo[i];
+		SumaTipo[aux]:= SumaTipo[aux] + Cost[i];
 	end;
-	writeln;
-	writeln('El porcentaje segun el total del tipo 1 es: ',Porc1:2:0,' %');
-	writeln('El porcentaje segun el total del tipo 2 es: ',Porc2:2:0,' %');
-	writeln('El porcentaje segun el total del tipo 3 es: ',Porc3:2:0,' %');
-	writeln('El porcentaje segun el total del tipo 4 es: ',Porc4:2:0,' %');
-	writeln('El porcentaje segun el total del tipo 5 es: ',Porc5:2:0,' %');
+	For j:= 1 to 5 do //Recorremos en referencia a particular,carga,transporte de pasajeros,oficial y servicios.
+	begin
+		Porc:= (SumaTipo[j] / SumaTotal) * 100;
+		writeln('El servicio ',TipoServicio[j],' recaudo: $',SumaTipo[j]:2:0,' y su porcentaje es del ',Porc:2:0,' % sobre el total');
+	end;
 end;
 
 Var
 	Tipo:TV;
-	Cost:TVC;
+	Cost,SumaTipo:TVC;
 	N:byte;
-	aux1,aux2,aux3,aux4,aux5:real;
 Begin
 	LeerArchivo(Tipo,Cost,N);
-	Suma(Tipo,Cost,N,aux1,aux2,aux3,aux4,aux5);
-	Porcentaje(Tipo,Cost,N,aux1,aux2,aux3,aux4,aux5);
+	Porcentaje(Tipo,Cost,N,SumaTipo);
 end.	
 
 
