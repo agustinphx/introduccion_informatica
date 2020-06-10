@@ -16,7 +16,7 @@ Type
 	TVP = array[1..100] of St6;
 	TVCer = array[1..100] of byte;
 	TVT = array[1..100] of real;
-	TVConst = array[1..4] of string[9];
+	TVConst = array[1..4] of st9;
 Const
   TipoCereal:TVConst = ('Trigo','Girasol','Soja','Maiz');
   
@@ -40,9 +40,7 @@ Var
 	i:byte;
 begin
 	For i:= 1 to N do
-	begin
 		SumaTonelada[i]:= 0;
-	end;
 end;
 
 Procedure Porcentaje(Cereal:TVCer; Toneladas:TVT; N:byte;  Var SumaTonelada:TVT);
@@ -131,7 +129,7 @@ begin
 		writeln(Ordenado[j]);
 end;
     
-Procedure Menu(var Op:char);
+Procedure Menu(Var Op:char);
   begin
 	writeln;
     writeln('Menu de opciones:');
