@@ -12,6 +12,8 @@ Procedure LeerMatriz(Var Mat:TM; Var N,M:byte);
 Var
 	i,j:byte;
 begin
+	write('Ingrese la cantidad de filas (menor a 6): ');readln(N);
+	write('Ingrese la cantidad de columnas(menor a 6): ');readln(M);
 	For i:= 1 to N do
 		For j:= 1 to M do
 		begin
@@ -92,8 +94,6 @@ Var
 	N,M,Aux:byte;
 	Num:integer;
 Begin
-	write('Ingrese la cantidad de filas (menor a 6): ');readln(N);
-	write('Ingrese la cantidad de columnas(menor a 6): ');readln(M);
 	LeerMatriz(Mat,N,M);
 	writeln;
 	writeln('Matriz');
