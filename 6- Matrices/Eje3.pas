@@ -2,9 +2,9 @@
 elementos de la matriz A que cumplan:
 A[fila, columna] <= 0 para fila impar y columna impar ó
 A[fila, columna] > 0 para fila par y columna par
-		1  8 -6 -7
+	1  8 -6 -7
 A =     4  6  3  2   
-		0 -5  9 13
+	0 -5  9 13
 	 
  B= -6 6 2 0 }
 Program Eje3;
