@@ -51,7 +51,7 @@ Var
 	Max:integer;
 begin
 	Max:= 0;
-	For i:= 1 to N do
+	For i:= 1 to N do // Para calcular bien la suma de cada fila debemos recorrerla de esta forma.
 	begin
 		For j:= 1 to M do
 			SF[i]:= SF[i] + Mat[i,j];
@@ -75,7 +75,7 @@ Var
 	Min:integer;
 begin
 	Min:= 999;
-	For j:= 1 to M do
+	For j:= 1 to M do // Para calcular bien la suma de cada columna debemos recorrerla de esta forma.
 	begin
 		For i:= 1 to N do
 			SC[j]:= SC[j] + Mat[i,j];
