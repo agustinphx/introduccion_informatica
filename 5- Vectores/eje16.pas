@@ -1,4 +1,4 @@
-{ El área de RRHH de una empresa desea conocer cuántos de sus empleados cumplen años
+{El área de RRHH de una empresa desea conocer cuántos de sus empleados cumplen años
 cada uno de los 12 meses. Se conoce mes(1..12) y cantidad de los N empleados, se pide ingresar
 dicha información para emitir el siguiente listado:
  Mes Cantidad

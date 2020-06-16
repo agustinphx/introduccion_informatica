@@ -66,7 +66,4 @@ Var
 Begin
 	LeerArchivo(Tipo,Cost,N);
 	Porcentaje(Tipo,Cost,N,SumaTipo);
-end.	
-
-
-
+end.
