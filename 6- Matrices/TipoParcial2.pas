@@ -132,7 +132,7 @@ Var
 Begin
 	LeerArchivo(Kms,Nombres,Meta,N,M);
 	GenerarArray(Kms,Nombres,N,M,Meta,A,K);
-	write('A - ');
+	write('A- Corredores que superaron la meta algun dia de la semana:');
 	Imprime(A,K);
 	writeln;
 	writeln;
