@@ -113,5 +113,6 @@ begin
 	Imprime(B,M);
 	writeln;
 	PosMax:= PosicionMaxProm(Mat,N);
+	writeln;
 	writeln('B- ',V[PosMax], ' no alcanzo la meta en ' ,CantidadDias(Mat,PosMax,X), ' dias');
 end.
