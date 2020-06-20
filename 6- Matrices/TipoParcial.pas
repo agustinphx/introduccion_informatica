@@ -78,7 +78,7 @@ Var
 begin
 	MaxProm:= 0;
 	PosMax:= 0;
-	For i:= 1 to N do // arrancamos en 2 porque la posicion ya esta en 1.
+	For i:= 1 to N do 
 	begin
 		Prom:= Suma(Mat,i)/ 7;
 		If (Prom > MaxProm) then
