@@ -10,9 +10,9 @@ A- Generar un arreglo con los nombres de los corredores que superaron la meta es
 B- Calcule e imprima, cuantos días no alcanzo la meta el corredor con promedio diario máximo.}
 Program TipoParcial;
 Type
-	St5 = string[5];
+	St10 = string[10];
 	TM = array[1..20,1..7] of real;
-	TV = array[1..20] of st5;
+	TV = array[1..20] of st10;
 
 Procedure LeerArchivo(Var Mat:TM; Var V:TV; Var N:byte; Var X:real);
 Var
