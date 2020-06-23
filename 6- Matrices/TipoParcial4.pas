@@ -15,13 +15,12 @@ Se pide desarrollar un programa Pascal, correctamente modularizado que lea y alm
 A- Generar un arreglo con los nombres de los nadadores que cumplieron con el mínimo establecido(superar 31 piletas completadas durante al menos 5 días).
 B- Informar cuantos nadadores alcanzaron superar la barrera de las 40 piletas completadas.
 C- Nombre del nadador que menos piletas alcanzó completar en un dia junto con la cantidad de piletas.
-D- Informar de los nadadores que no cumplieron cual tiene el promedio mas alto.
-E- Informar el promedio mas alto entre todos los nadadores.
+D- Informar el promedio mas alto entre todos los nadadores  junto con su nombre.
 Salidas:
 A Camila Maria Federico
 B 2 (Camila y Maria)
 C Marcelo 10 piletas
-D Eugenia (promedio 25)}
+D Maria(promedio 31)}
 Program TipoParcial4;
 Type
 	St10 = string[10];
