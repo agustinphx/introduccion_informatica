@@ -58,7 +58,7 @@ begin
 	close(arch);
 end;
 
-Procedure GenerarArray(Kms:TM; Nombres:TV; N,M:byte; Meta:byte;  Var A:TV; Var K:byte);
+Procedure GenerarArray(Kms:TM; Nombres:TV; N,M:byte; Meta:byte; Var A:TV; Var K:byte);
 Var
 	i,j:byte;
 begin
@@ -95,7 +95,7 @@ begin
 	Suma:= Sum;
 end;
 
-Function PosicionMaximoPromedio(Kms:TM; N:byte):byte;
+{Function PosicionMaximoPromedio(Kms:TM; N:byte):byte;
 Var
 	i,PosMax:byte;
 	MaxProm,Prom:real;
@@ -112,6 +112,25 @@ begin
 		end;
 	end;
 	PosicionMaximoPromedio:= PosMax;
+end;}
+
+Procedure PosicionMaximoPromedio(Kms:TM; Vec:TV; N:byte);
+Var
+	i,PosMax:byte;
+	MaxProm,Prom:real;
+begin
+	MaxProm:= 0;
+	PosMax:= 0;
+	For i:= 1 to N do 
+	begin
+		Prom:= Suma(Kms,i)/ 7;
+		If (Prom > MaxProm) then
+		begin
+			MaxProm:= Prom;
+			PosMax:= i;
+		end;
+	end;
+	writeln('El maximo promedio es de: ',MaxProm:2:0,' y corresponde a : ',Vec[PosMax]);
 end;
 
 Function CantidadDias(Kms:TM; Fila:byte; Meta:real):byte;
@@ -136,6 +155,7 @@ Begin
 	Imprime(A,K);
 	writeln;
 	writeln;
-	PosMax:= PosicionMaximoPromedio(Kms,N);
-	writeln('B- ',Nombres[PosMax], ' no alcanzo la meta en ',CantidadDias(Kms,PosMax,Meta),' dias');
+	//PosMax:= PosicionMaximoPromedio(Kms,N);
+	//writeln('B- ',Nombres[PosMax], ' no alcanzo la meta en ',CantidadDias(Kms,PosMax,Meta),' dias');
+	PosicionMaximoPromedio(Kms,Nombres,N);
 end.

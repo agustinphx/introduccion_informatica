@@ -1,7 +1,7 @@
 {Un conjunto de corredores entrenan para una carrera, corriendo una hora cada uno de los 7 días de la semana y teniendo como meta alcanzar en dicha hora,una mínima de X kms.
 En un archivo de texto se graba la meta X en la primera linea y en las restantes el nombre(10 caracteres como máximo)y los 7 días de cada corredor,uno por línea.
  20
-Ivo 5 10 15 15 10 5 0
+Ivo  5 10 15 15 10 5 0
 Pia  10 20  5 10 10 30  5
 Juan 5  5  10  1  8 20 25
 Omar 5  10 25 20 40 25 15
