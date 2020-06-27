@@ -40,50 +40,35 @@ begin
 	close(arch);
 end;
 
-Function Promedio(Talles:TM; Fila,Columnas:byte):real;
-Var
-	i:byte;
-	Sum,Cont:integer;
+Procedure GenerarPromedio(Talles:TM; N,M:byte; Var VProm:TVR);
+var
+  i,j:byte;
+  Sum,Prom: real;
 begin
-	Sum:= 0;
-	Cont:= 0;
-	For i:= 1 to Columnas do
-	begin
-		Sum:= Sum + Talles[Fila,i];
-		Cont:= Cont + 1;
-	end;
-	Promedio:= Sum / Cont;
+	For j:= 1 to M do
+    begin
+		Sum:=0;
+		Prom:=0;
+        For i:= 1 to N do
+        begin
+			Sum:= Sum + Talles[i,j];
+        end;
+        Prom:= (Sum / N);
+        VProm[j]:= Prom;
+      end;
 end;
 
-Procedure GenerarArray(Talles:TM; Cod:TV; N,M:byte; Var VProm:TVR; Var K:byte);
+Procedure Imprime(VProm:TVR; N:byte);
 Var
 	i:byte;
-	Prom:real;
 begin
-	K:= 0;
 	For i:= 1 to N do
-	begin
-	 	Prom:= Promedio(Talles,i,M);
-		If (Prom <> 0) then
-		begin
-			K:= K + 1;
-			VProm[K]:= Prom;
-		end;
-	end;
-end;
-
-Procedure Imprime(VProm:TVR; K:byte);
-Var
-	i:byte;
-begin
-	For i:= 1 to K do
 		write(VProm[i]:6:2,' ');
 end;
 
-Procedure Porcentaje(Talles:TM; N,M:byte);
+Function Porcentaje(Talles:TM; N,M:byte):real;
 Var
 	i,j,Cont:byte;
-	Porc:real;
 begin
 	Cont:= 0;
 	For i:= 1 to N do
@@ -95,59 +80,51 @@ begin
 		If (j >= M) then
 			Cont:= Cont + 1;
 	end;
-	Porc:= (Cont / M) * 100;
-	writeln('El porcentaje de codigos con stock en todos los talles es del: ',Porc:2:0, '%');
+	Porcentaje:= (Cont / M) * 100;
 end;
-
-Function MayorTalle(Talles:TM; N,M:byte):byte;
-Var
-	i,j,Max:byte;
-begin
-	Max:= Talles[1,1];
-	For j:= 1 to M do 
-		For i:= 1 to N do
-		begin
-			If(Talles[i,j] > Max) then
-				Max:= Talles[i,j];
-		end;
-	MayorTalle:= Max;
-end;
-
 
 Procedure Informa(Talles:TM; Cod:TV; N,M:byte);
 Var
-	Encontrado,j,X,Max:byte;
+	X:string[4];
+	i,j,Max,PosMax:byte;
 begin
-	Encontrado:= 0;
-	Max:= MayorTalle(Talles,N,M);
-	write('Ingrese un numero del 1 al ',N,' : ');readln(X);
-	For j:= 1 to M do
-		If (Talles[X,j] = Max) then
-			Encontrado:= 1;
-			
-	If (Encontrado = 1) then
-		writeln(Cod[x],': Es el codigo con mas stock en talles')
+	write('Ingrese el codigo : ');readln(X);
+	Max:= 0;
+	i:= 1;
+	while (i <= N ) and (Cod[i] <> X) do
+		i:= i + 1;
+		
+    For j:= 1 to M do
+		if (Talles[i,j] >= Max) then
+		begin
+			Max:= Talles[i,j];
+			PosMax:= j;
+		end;
+		
+	If (Max <> 0) then
+		writeln('El mayor Stock esta en el talle: ', PosMax)
 	Else
-		writeln(Cod[x],': No es el codigo con mas stock de talles');
+		writeln('No hay stock para ningun talle');
 end;
 
 Var
 	Talles:TM;
 	Cod:TV;
 	VProm:TVR;
-	N,M,K:byte;
+	N,M:byte;
+	Porc:real;
 Begin
 	LeerArchivo(Talles,Cod,N,M);
-	GenerarArray(Talles,Cod,N,M,VProm,K);
+	GenerarPromedio(Talles,N,M,VProm);
+	Porc:= Porcentaje(Talles,N,M);
 	write('A- ');
-	Porcentaje(Talles,N,M);
+	writeln('El porcentaje de codigos con stock en todos los talles es del: ',Porc:6:2, ' %');
 	writeln;
-	MayorTalle(Talles,N,M);
 	writeln;
 	writeln('C- Promedios: ');
-	Imprime(VProm,K);
+	Imprime(VProm,N);
 	writeln;
 	writeln;
-	writeln('B- ');
+	write('B- ');
 	Informa(Talles,Cod,N,M);
 end.
