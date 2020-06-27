@@ -27,7 +27,6 @@ Var
 	i,j:byte;
 	arch:text;
 begin
-	N:= 0;
 	assign(arch,'SegundoParcial.txt');reset(arch);
 	readln(arch,N,M);
 	For i:= 1 to N do
@@ -41,9 +40,9 @@ begin
 end;
 
 Procedure GenerarPromedio(Talles:TM; N,M:byte; Var VProm:TVR);
-var
-  i,j:byte;
-  Sum,Prom: real;
+Var
+	i,j:byte;
+	Sum,Prom: real;
 begin
 	For j:= 1 to M do
     begin
@@ -119,7 +118,6 @@ Begin
 	Porc:= Porcentaje(Talles,N,M);
 	write('A- ');
 	writeln('El porcentaje de codigos con stock en todos los talles es del: ',Porc:6:2, ' %');
-	writeln;
 	writeln;
 	writeln('C- Promedios: ');
 	Imprime(VProm,N);
