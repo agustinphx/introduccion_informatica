@@ -47,7 +47,7 @@ begin
 	close(arch);
 end;
 
-Procedure GenerarArray(Mat:TM; Vec:TV; N,M,Min:byte; Var A:TV; Var K:byte);
+Procedure GenerarArray(Mat:TM; Vec:TV; N,M,Min:byte; Var A:TV; Var K:byte); // Array NO paralelo.
 Var
 	i,j,Cont:byte;
 begin

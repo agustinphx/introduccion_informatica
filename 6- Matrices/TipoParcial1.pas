@@ -44,18 +44,18 @@ begin
 	close(arch);
 end;
 
-Function Promedio(A:TM; B:TV;  Fila,Columnas:byte):real;
+Function Promedio(A:TM; B:TV;  Fila,M:byte):real;
 Var
-	i:byte;
+	j:byte;
 	Sum,Cont:integer;
 begin
 	Sum:= 0;
 	Cont:= 0;
-	For i:= 1 to Columnas do
+	For j:= 1 to M do
 	begin
-		If (A[Fila,i] MOD B[Fila] = 0) then
+		If (A[Fila,j] MOD B[Fila] = 0) then
 		begin
-			Sum:= Sum + A[Fila,i];
+			Sum:= Sum + A[Fila,j];
 			Cont:= Cont + 1;
 		end;
 	end;
@@ -87,7 +87,7 @@ begin
 	For i:= 1 to N do
 	begin
 	 	Prom:= Promedio(A,B,i,M);
-		If (Prom <> 0) and (BusquedaMatriz(VProm,N,Prom) <> 1) then // Debemos invocar si o si la funcion BusquedaMatriz dentro del ciclo porque su valor va cambiando.
+		If (Prom <> 0) and (BusquedaMatriz(VProm,N,Prom) <> 1) then // Hay que invocar si o si la funcion BusquedaMatriz dentro del ciclo porque su valor va cambiando.
 		begin
 			K:= K + 1;
 			VProm[K]:= Prom;
@@ -103,7 +103,7 @@ begin
 	For i:= 1 to K do
 		write(VProm[i]:2:0,' ');
 end;
-//Utilizo dos procedimientos diferentes para imprimir los vectores debido a que son de distintos tipos (TV, TVR).
+//Uso dos procedimientos diferentes para imprimir los vectores debido a que son de distintos tipos (TV, TVR).
 Procedure ImprimeFila(VFila:TV; K:byte);
 Var
 	i:byte;
@@ -120,10 +120,10 @@ Var
 Begin
 	LeerArchivo(A,B,N,M);
 	GenerarArrays(A,B,N,M,VProm,VFila,K);
-	writeln('VProm' );
+	write('VProm = ' );
 	ImprimeProm(VProm,K); 
 	writeln;
 	writeln;
-	writeln('VFila');
+	write('VFila = ');
 	ImprimeFila(VFila,K);
 end. 

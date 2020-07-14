@@ -22,8 +22,8 @@ café 332/4=83
 dulce 120/4=30
 Arroz 76/4=19
 b) Comercio 1: 0 - 2: 1 - 3:2 - 4:0
-c) X=Café  Si
-X=Azúcar  No }
+c) X= Café  Si
+   X= Azúcar  No }
 Program TipoParcial3;
 Type
 	St6 = string[6];
@@ -88,18 +88,18 @@ end;
 
 Procedure Verifica(Com:TM; Pre:TVPre; Prod:TVProd; N,M:byte);
 Var
-	Encontrado,j,X:byte;
+	Encuentra,j,X:byte;
 begin
-	Encontrado:= 0;
+	Encuentra:= 0;
 	write('Ingrese un numero del 1 al ',N,' : ');readln(X);
 	For j:= 1 to M do
 		If (Com[X,j] <= Pre[x]) then
-			Encontrado:= 1;
+			Encuentra:= 1;
 			
-	If (Encontrado = 1) then
-		writeln(Prod[x],': Si se respeta el precio al menos una vez')
+	If (Encuentra = 1) then
+		writeln('C- ',Prod[x],': Si se respeta el precio al menos una vez')
 	Else
-		writeln(Prod[x],': No se respeta el precio');
+		writeln('C- ',Prod[x],': No se respeta el precio');
 end;
 
 Var

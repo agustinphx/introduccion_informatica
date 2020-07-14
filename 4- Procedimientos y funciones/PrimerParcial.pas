@@ -39,7 +39,7 @@ begin
 				Ren:= 'B'
 			Else
 				Ren:= 'R';
-				
+							
 	Rendimiento:= Ren;
 end;
 

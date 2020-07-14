@@ -13,6 +13,8 @@ Type
 Const
   TipoServicio:TVConst = ('Particular','Carga','Transporte','Oficial','Servicios');
   
+  
+  
 Procedure LeerArchivo(Var Tipo:TV; Var Cost:TVC; Var N:byte);
 Var
 	Arch:text;
@@ -52,6 +54,7 @@ begin
 		aux:= Tipo[i];
 		SumaTipo[aux]:= SumaTipo[aux] + Cost[i];
 	end;
+	
 	For j:= 1 to 5 do //Recorremos en referencia a particular,carga,transporte de pasajeros,oficial y servicios.
 	begin
 		Porc:= (SumaTipo[j] / SumaTotal) * 100;
