@@ -1,0 +1,6 @@
+4
+Energetica     20 40 35  5
+Deportista     45  0 30 25
+Natural        20 20  0 60
+Dietetica      15 50 15 20
+Celiaco        45  0 55  0
