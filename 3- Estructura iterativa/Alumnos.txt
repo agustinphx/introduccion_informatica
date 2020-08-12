@@ -1,0 +1,5 @@
+4
+Sergio 	  4 6 0 0
+Margarita 8 4 7 5 
+Facundo   9 9 9 0
+Raquel    2 6 4 0 
