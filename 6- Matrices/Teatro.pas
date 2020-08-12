@@ -62,7 +62,7 @@ begin
 	CuantasFilas:= Cont;
 end;
 
-Procedure MaximaFila(T:TM; N,M:byte; X,D:real); //Lo hice pensando que habia que imprimir fila y monto por la respuesta, rehago en una función.
+Procedure MaximaFila(T:TM; N,M:byte; X,D:real);
 Var
 	i,j,PosMax:byte;
 	Acum,Max,Desc:real;
