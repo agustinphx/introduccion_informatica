@@ -1,5 +1,0 @@
-5
-Claudio      50   0 85 31 45 46
-Anastasia    70   30 45 0 65 25
-Jeronimo     38   33 55 44 22 31
-Gonzalo      54   48 55 27 16 12
