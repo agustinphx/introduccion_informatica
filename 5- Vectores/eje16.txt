@@ -1,4 +1,0 @@
-3
-Enero     100
-Febrero   350
-Marzo     270
