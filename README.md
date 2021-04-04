@@ -1,4 +1,4 @@
-# Introducción a la Informática (Nombre de la asignatura).
+# Introducción a la Informática
 ## Esta asignatura trata sobre los siguientes conceptos básicos e introductorios de la programación:
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Introducción a la estructura secuencial.
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Estructura alternativa (If-Then-Else)
