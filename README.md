@@ -8,9 +8,9 @@
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Registros.
 ## El lenguaje utilizado para el aprendizaje es Pascal
 https://www.freepascal.org/
-## El IDE que utilizo es Geany
+## Recomendación de IDE: Geany
 https://www.geany.org/
-### Utilizo este IDE porque posee menos bugs que el de Free pascal al momento de compilar y sobre todo modificar código. Además por su flexibilidad y simplicidad en la interface.
+### Este IDE posee menos bugs que el de Free pascal al momento de compilar y sobre todo modificar código. Además su interface es muy simple e intuitiva.
 ### IMPORTANTE: Es excluyente tener descargado e instalado Free pascal para su correcta compilación al momento de ejecutar un algoritmo.
 
 
