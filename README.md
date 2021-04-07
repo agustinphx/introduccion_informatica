@@ -10,7 +10,7 @@
 https://www.freepascal.org/
 ## Recomendación de IDE: Geany
 https://www.geany.org/
-### Este IDE posee menos bugs que el de Free pascal al momento de compilar y sobre todo modificar código. Además su interface es muy simple e intuitiva.
+### Este IDE posee menos bugs que el de Free pascal al momento de compilar y sobre todo, al momento de modificar código. Además su interfaz es muy simple e intuitiva.
 ### IMPORTANTE: Es excluyente tener descargado e instalado Free pascal para su correcta compilación al momento de ejecutar un algoritmo.
 
 
