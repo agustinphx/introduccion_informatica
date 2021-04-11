@@ -6,7 +6,7 @@
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Procedimientos y Funciones.
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Vectores y Matrices.
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Registros.
-## El lenguaje utilizado: Pascal ![pas](https://user-images.githubusercontent.com/58674979/114293287-441f1d00-9a6b-11eb-819a-27a0bd645a3f.gif)
+## Lenguaje utilizado: Pascal ![pas](https://user-images.githubusercontent.com/58674979/114293287-441f1d00-9a6b-11eb-819a-27a0bd645a3f.gif)
   
 
  
