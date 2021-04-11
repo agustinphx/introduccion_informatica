@@ -8,9 +8,3 @@
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Registros.
 ## El lenguaje utilizado: Pascal <img src="https://img.icons8.com/material-two-tone/38/000000/pas.png"/>
 https://www.freepascal.org/
-## Recomendación de IDE: Geany
-https://www.geany.org/
-### Este IDE posee menos bugs que el originario de Free pascal al momento de compilar y sobre todo, al momento de modificar código. Además su interfase es muy simple e intuitiva.
-### IMPORTANTE: Es excluyente tener descargado e instalado Free pascal para su correcta compilación al momento de ejecutar un algoritmo.
-
-
