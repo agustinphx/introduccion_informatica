@@ -6,7 +6,7 @@
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Procedimientos y Funciones.
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Vectores y Matrices.
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Registros.
-## El lenguaje utilizado: Pascal
+## El lenguaje utilizado: Pascal <img src="https://img.icons8.com/material-two-tone/38/000000/pas.png"/>
 https://www.freepascal.org/
 ## Recomendación de IDE: Geany
 https://www.geany.org/
