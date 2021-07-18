@@ -1,5 +1,5 @@
 # Introducción a la Informática <img src="https://img.icons8.com/dusk/50/000000/flow-chart.png"/>
-## Este repositorio contiene todos los proyectos realizados en la Universidad Caece para la asignatura: ''Introducción a la informática'' que trata sobre los siguientes conceptos básicos e introductorios a la programación:
+## Este repositorio contiene todos los proyectos realizados para la asignatura: ''Introducción a la informática'' en la Universidad Caece que trata sobre los siguientes conceptos básicos e introductorios a la programación:
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Introducción a la estructura secuencial.
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Estructura alternativa (If-Then-Else)
 ### <img src="https://img.icons8.com/plumpy/15/000000/sphere.png"/> Ciclos iterativos (For-While-Repeat)
