@@ -11,7 +11,7 @@ Se pide leer la información del archivo y mediante un menú que permita la repe
 Program Edificio;
 
 Type
-	TipoVec1 = array[1..5]of integer;
+	TipoVec1 = array[1..5]of real;
 	TipoVec2 = array[1..5]of string[10];
 
 Const
@@ -28,7 +28,7 @@ end;
 Procedure Totales(Var TotalMonto,TotalFact:TipoVec1);
 Var
 	Piso:byte;
-	Monto:integer;
+	Monto:real;
 	Arch:Text;
 begin
 	assign(Arch,'Pisos.txt');reset(Arch);
@@ -46,7 +46,7 @@ Var
 	i:byte;
 begin
 	For i:= 1 to 5 do
-	writeln(Pisos[i],Vec[i]:10);
+	writeln(Pisos[i],'  $',Vec[i]:6:2);
 end;
 
 Procedure Promedio(TotalMonto,TotalFact:TipoVec1);
@@ -61,10 +61,10 @@ begin
 	end;
 end;
 
-Function MontoTotal(TotalMonto:TipoVec1):integer; 
+Function MontoTotal(TotalMonto:TipoVec1):real; 
 Var
 	i:byte;
-	Total:integer;
+	Total:real;
 begin
 	Total:= 0;
 	For i:= 1 to 5 do
@@ -76,7 +76,7 @@ Procedure Porcentaje(TotalMonto:TipoVec1);
 Var
 	i:byte;
 	Porc:real;
-	TotalImp:integer;
+	TotalImp:real;
 begin
 	TotalImp:= MontoTotal(TotalMonto);
 	For i:= 1 to 5 do
